@@ -9,17 +9,27 @@
 import UIKit
 import WebKit
 
-class BrowserViewController: UIViewController {
+class BrowserViewController: UIViewController, WKNavigationDelegate {
 
-    @IBOutlet weak var webView: WKWebView!
+    @IBOutlet weak var browser: WKWebView!
     @IBOutlet weak var searchText: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        browser.navigationDelegate = self
+        
         let url = URL(string: "https://google.com")
         let req = URLRequest(url: url!)
-        webView.load(req)
+        browser.load(req)
+    }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        guard let url = browser.url else {
+            return
+        }
+        
+        searchText.text = url.absoluteString
     }
     
     override func didReceiveMemoryWarning() {

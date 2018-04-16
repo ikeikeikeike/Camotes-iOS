@@ -66,8 +66,8 @@
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="browser" destination="yDt-fm-5mx" id="oIH-0f-I9b"/>
                         <outlet property="searchText" destination="3sO-Kh-N87" id="sVM-zM-Fpl"/>
-                        <outlet property="webView" destination="yDt-fm-5mx" id="pn5-50-Qtz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
