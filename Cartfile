@@ -1,0 +1,13 @@
+github "Swinject/Swinject"
+github "Swinject/SwinjectStoryboard"
+
+github "ReactiveX/RxSwift"
+github "Moya/Moya"
+
+github "realm/realm-cocoa"
+
+github "hyperoslo/Compass"
+
+github "kishikawakatsumi/KeychainAccess"
+
+github "skywinder/ActionSheetPicker-3.0"
