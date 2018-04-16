@@ -16,6 +16,7 @@
 		88BEC0FB2084F30F00F84D89 /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BEC0FA2084F30F00F84D89 /* RootTabBarController.swift */; };
 		88BEC0FE2084F92200F84D89 /* Browser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88BEC0FC2084F92200F84D89 /* Browser.storyboard */; };
 		88BEC1012084FCC300F84D89 /* BrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BEC1002084FCC300F84D89 /* BrowserViewController.swift */; };
+		88BEC10420850C2900F84D89 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88BEC10320850C2900F84D89 /* WebKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		88BEC0FA2084F30F00F84D89 /* RootTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
 		88BEC0FD2084F92200F84D89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Camotes/Base.lproj/Browser.storyboard; sourceTree = "<group>"; };
 		88BEC1002084FCC300F84D89 /* BrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserViewController.swift; sourceTree = "<group>"; };
+		88BEC10320850C2900F84D89 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88BEC10420850C2900F84D89 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +88,7 @@
 				88BEC0D420839CF500F84D89 /* CamotesTests */,
 				88BEC0DF20839CF500F84D89 /* CamotesUITests */,
 				88BEC0BE20839CF300F84D89 /* Products */,
+				88BEC10220850C2800F84D89 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -233,6 +237,14 @@
 				88BEC1002084FCC300F84D89 /* BrowserViewController.swift */,
 			);
 			path = Browser;
+			sourceTree = "<group>";
+		};
+		88BEC10220850C2800F84D89 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				88BEC10320850C2900F84D89 /* WebKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

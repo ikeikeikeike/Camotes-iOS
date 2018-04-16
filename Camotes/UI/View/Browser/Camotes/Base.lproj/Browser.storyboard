@@ -17,7 +17,41 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UDL-Eo-wJU">
+                                <rect key="frame" x="0.0" y="574" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="←" id="3Nd-np-pvo"/>
+                                    <barButtonItem title="→" id="P7f-0y-oFY"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="9bN-1E-jtE"/>
+                                    <barButtonItem systemItem="add" id="zDu-eI-f4o">
+                                        <connections>
+                                            <action selector="showDownload:" destination="BYZ-38-t0r" id="TMB-aZ-dBB"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Wcy-ti-26n"/>
+                                    <barButtonItem title="Item" systemItem="refresh" id="MxA-N7-vsa"/>
+                                </items>
+                            </toolbar>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yDt-fm-5mx">
+                                <rect key="frame" x="0.0" y="64" width="375" height="510"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="UDL-Eo-wJU" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="4GK-kK-adg"/>
+                            <constraint firstItem="yDt-fm-5mx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4GV-Ta-iMR"/>
+                            <constraint firstItem="UDL-Eo-wJU" firstAttribute="top" secondItem="yDt-fm-5mx" secondAttribute="bottom" id="B4p-8r-Lei"/>
+                            <constraint firstItem="yDt-fm-5mx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Cuj-UR-zIS"/>
+                            <constraint firstItem="UDL-Eo-wJU" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="MiU-Vd-b4E"/>
+                            <constraint firstItem="UDL-Eo-wJU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="deD-BU-Jqu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yDt-fm-5mx" secondAttribute="trailing" id="ncU-Bt-wQJ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="fpS-EI-Jmq">
@@ -27,11 +61,13 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" returnKeyType="google" enablesReturnKeyAutomatically="YES"/>
+                            <textInputTraits key="textInputTraits" keyboardType="URL" returnKeyType="google" enablesReturnKeyAutomatically="YES"/>
                         </textField>
                     </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="searchText" destination="3sO-Kh-N87" id="sVM-zM-Fpl"/>
+                        <outlet property="webView" destination="yDt-fm-5mx" id="pn5-50-Qtz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
