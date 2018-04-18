@@ -53,7 +53,7 @@ class BrowserViewController: UIViewController, WKNavigationDelegate, UITextField
         if let link = textField.text {
             loadURL(link)
         }
-
+        
         return true
     }
 
@@ -89,11 +89,11 @@ extension BrowserViewController {
         if URL(string: link)?.scheme != nil {
             return URL(string: link)
         }
-        if verifyURL("https://\(link)") {
-            return URL(string: "https://\(link)")
-        }
         if verifyURL("http://\(link)") {
             return URL(string: "http://\(link)")
+        }
+        if verifyURL("https://\(link)") {
+            return URL(string: "https://\(link)")
         }
         
         return nil
@@ -142,8 +142,29 @@ extension BrowserViewController {
 
 extension BrowserViewController {
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        
     }
     
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        if (error as! URLError).code == URLError.cancelled {
+            return
+        }
+        
+        showAlert("cloud not load page")
+    }
+    
+    func webView(_ webView: WKWebView, didReceiveServerRedirectForProvisionalNavigation navigation: WKNavigation!) {
+        
+    }
+    
+    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+        
+    }
+
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        decisionHandler(.allow)
+    }
+
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
         backButton.isEnabled = browser.canGoBack
         forwardButton.isEnabled = browser.canGoForward

@@ -73,7 +73,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" keyboardType="URL" returnKeyType="google" enablesReturnKeyAutomatically="YES"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="URL" returnKeyType="google" enablesReturnKeyAutomatically="YES"/>
                         </textField>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>

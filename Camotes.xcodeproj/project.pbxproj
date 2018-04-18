@@ -146,9 +146,9 @@
 		88BEC0EE2084F11F00F84D89 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				882BFEF02087A4C300DB67F1 /* Storyboard */,
 				88BEC0F22084F17000F84D89 /* Presenter */,
 				88BEC0F12084F16A00F84D89 /* View */,
+				882BFEF02087A4C300DB67F1 /* Storyboard */,
 			);
 			path = UI;
 			sourceTree = "<group>";
