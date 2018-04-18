@@ -81,6 +81,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		882BFEF02087A4C300DB67F1 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				88BEC0FC2084F92200F84D89 /* Browser.storyboard */,
+				88BEC0C420839CF300F84D89 /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
 		88BEC0B420839CF300F84D89 = {
 			isa = PBXGroup;
 			children = (
@@ -109,7 +118,6 @@
 				88BEC0F02084F12F00F84D89 /* Domain */,
 				88BEC0EE2084F11F00F84D89 /* UI */,
 				88BEC0C020839CF300F84D89 /* AppDelegate.swift */,
-				88BEC0C420839CF300F84D89 /* Main.storyboard */,
 				88BEC0C720839CF400F84D89 /* Assets.xcassets */,
 				88BEC0C920839CF400F84D89 /* LaunchScreen.storyboard */,
 				88BEC0CC20839CF400F84D89 /* Info.plist */,
@@ -138,6 +146,7 @@
 		88BEC0EE2084F11F00F84D89 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				882BFEF02087A4C300DB67F1 /* Storyboard */,
 				88BEC0F22084F17000F84D89 /* Presenter */,
 				88BEC0F12084F16A00F84D89 /* View */,
 			);
@@ -233,7 +242,6 @@
 		88BEC0FF2084F93700F84D89 /* Browser */ = {
 			isa = PBXGroup;
 			children = (
-				88BEC0FC2084F92200F84D89 /* Browser.storyboard */,
 				88BEC1002084FCC300F84D89 /* BrowserViewController.swift */,
 			);
 			path = Browser;
