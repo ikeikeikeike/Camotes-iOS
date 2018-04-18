@@ -84,6 +84,7 @@
 		882BFEF02087A4C300DB67F1 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				88BEC0C920839CF400F84D89 /* LaunchScreen.storyboard */,
 				88BEC0FC2084F92200F84D89 /* Browser.storyboard */,
 				88BEC0C420839CF300F84D89 /* Main.storyboard */,
 			);
@@ -119,7 +120,6 @@
 				88BEC0EE2084F11F00F84D89 /* UI */,
 				88BEC0C020839CF300F84D89 /* AppDelegate.swift */,
 				88BEC0C720839CF400F84D89 /* Assets.xcassets */,
-				88BEC0C920839CF400F84D89 /* LaunchScreen.storyboard */,
 				88BEC0CC20839CF400F84D89 /* Info.plist */,
 			);
 			path = Camotes;
