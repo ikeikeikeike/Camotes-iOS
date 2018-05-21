@@ -3,6 +3,7 @@ import RxMoya
 import RxSwift
 
 protocol ScraperStore {
+   func info(url: String, handler: @escaping (SingleEvent<InfoEntity>) -> Void)
 }
 
 struct ScraperStoreImpl: ScraperStore {

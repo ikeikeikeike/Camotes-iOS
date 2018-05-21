@@ -126,6 +126,8 @@ extension BrowserViewController {
     
     @IBAction func showDownload(_ sender: Any) {
         let sheet = UIAlertController(title: "Download Video", message: nil, preferredStyle: .alert)
+       
+        
         
         let cancel = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
         let action = UIAlertAction(title: "Download", style: .default, handler: {(action: UIAlertAction!) in
