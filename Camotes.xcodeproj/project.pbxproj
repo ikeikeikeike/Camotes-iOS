@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		887C2C8720B019EB0026A1BC /* ScraperStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887C2C8620B019EB0026A1BC /* ScraperStore.swift */; };
+		887C2C8920B01AB50026A1BC /* ScraperEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887C2C8820B01AB50026A1BC /* ScraperEntity.swift */; };
+		887C2C8B20B01B4B0026A1BC /* RxMoya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887C2C8A20B01B4B0026A1BC /* RxMoya.framework */; };
+		887C2C8D20B01B5A0026A1BC /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887C2C8C20B01B5A0026A1BC /* RxSwift.framework */; };
+		887C2C9120B147A90026A1BC /* Filer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 887C2C8F20B147A90026A1BC /* Filer.storyboard */; };
+		887C2C9320B147E70026A1BC /* FilerCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887C2C9220B147E70026A1BC /* FilerCollectionViewController.swift */; };
+		887C2C9520B14E6B0026A1BC /* FilerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887C2C9420B14E6B0026A1BC /* FilerCollectionViewCell.swift */; };
+		88AB39FD20B00A830061DCF0 /* ScraperAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AB39FC20B00A830061DCF0 /* ScraperAPI.swift */; };
+		88AB39FF20B00B540061DCF0 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88AB39FE20B00B540061DCF0 /* Alamofire.framework */; };
+		88AB3A0120B00B670061DCF0 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88AB3A0020B00B670061DCF0 /* Result.framework */; };
+		88AB3A0320B00B850061DCF0 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88AB3A0220B00B850061DCF0 /* Moya.framework */; };
 		88BEC0C120839CF300F84D89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BEC0C020839CF300F84D89 /* AppDelegate.swift */; };
 		88BEC0C620839CF300F84D89 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88BEC0C420839CF300F84D89 /* Main.storyboard */; };
 		88BEC0C820839CF400F84D89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88BEC0C720839CF400F84D89 /* Assets.xcassets */; };
@@ -37,6 +48,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		887C2C8620B019EB0026A1BC /* ScraperStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScraperStore.swift; sourceTree = "<group>"; };
+		887C2C8820B01AB50026A1BC /* ScraperEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScraperEntity.swift; sourceTree = "<group>"; };
+		887C2C8A20B01B4B0026A1BC /* RxMoya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxMoya.framework; path = Carthage/Build/iOS/RxMoya.framework; sourceTree = "<group>"; };
+		887C2C8C20B01B5A0026A1BC /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		887C2C9020B147A90026A1BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Camotes/UI/Storyboard/Base.lproj/Filer.storyboard; sourceTree = "<group>"; };
+		887C2C9220B147E70026A1BC /* FilerCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilerCollectionViewController.swift; sourceTree = "<group>"; };
+		887C2C9420B14E6B0026A1BC /* FilerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilerCollectionViewCell.swift; sourceTree = "<group>"; };
+		88AB39FC20B00A830061DCF0 /* ScraperAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScraperAPI.swift; sourceTree = "<group>"; };
+		88AB39FE20B00B540061DCF0 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		88AB3A0020B00B670061DCF0 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
+		88AB3A0220B00B850061DCF0 /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Moya.framework; path = Carthage/Build/iOS/Moya.framework; sourceTree = "<group>"; };
 		88BEC0BD20839CF300F84D89 /* Camotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Camotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88BEC0C020839CF300F84D89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88BEC0C520839CF300F84D89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -60,6 +82,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				887C2C8D20B01B5A0026A1BC /* RxSwift.framework in Frameworks */,
+				887C2C8B20B01B4B0026A1BC /* RxMoya.framework in Frameworks */,
+				88AB3A0320B00B850061DCF0 /* Moya.framework in Frameworks */,
+				88AB3A0120B00B670061DCF0 /* Result.framework in Frameworks */,
+				88AB39FF20B00B540061DCF0 /* Alamofire.framework in Frameworks */,
 				88BEC10420850C2900F84D89 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -85,10 +112,28 @@
 			isa = PBXGroup;
 			children = (
 				88BEC0C920839CF400F84D89 /* LaunchScreen.storyboard */,
-				88BEC0FC2084F92200F84D89 /* Browser.storyboard */,
 				88BEC0C420839CF300F84D89 /* Main.storyboard */,
+				887C2C8F20B147A90026A1BC /* Filer.storyboard */,
+				88BEC0FC2084F92200F84D89 /* Browser.storyboard */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		887C2C8E20B144530026A1BC /* Filer */ = {
+			isa = PBXGroup;
+			children = (
+				887C2C9220B147E70026A1BC /* FilerCollectionViewController.swift */,
+				887C2C9420B14E6B0026A1BC /* FilerCollectionViewCell.swift */,
+			);
+			path = Filer;
+			sourceTree = "<group>";
+		};
+		88AB39FA20B00A3B0061DCF0 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				88AB39FC20B00A830061DCF0 /* ScraperAPI.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		88BEC0B420839CF300F84D89 = {
@@ -176,6 +221,7 @@
 		88BEC0F12084F16A00F84D89 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				887C2C8E20B144530026A1BC /* Filer */,
 				88BEC0FF2084F93700F84D89 /* Browser */,
 				88BEC0F92084F2E200F84D89 /* Root */,
 			);
@@ -213,6 +259,7 @@
 		88BEC0F62084F1E300F84D89 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				887C2C8820B01AB50026A1BC /* ScraperEntity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -227,6 +274,8 @@
 		88BEC0F82084F1EF00F84D89 /* DataStore */ = {
 			isa = PBXGroup;
 			children = (
+				88AB39FA20B00A3B0061DCF0 /* API */,
+				887C2C8620B019EB0026A1BC /* ScraperStore.swift */,
 			);
 			path = DataStore;
 			sourceTree = "<group>";
@@ -250,6 +299,11 @@
 		88BEC10220850C2800F84D89 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				887C2C8C20B01B5A0026A1BC /* RxSwift.framework */,
+				887C2C8A20B01B4B0026A1BC /* RxMoya.framework */,
+				88AB3A0220B00B850061DCF0 /* Moya.framework */,
+				88AB3A0020B00B670061DCF0 /* Result.framework */,
+				88AB39FE20B00B540061DCF0 /* Alamofire.framework */,
 				88BEC10320850C2900F84D89 /* WebKit.framework */,
 			);
 			name = Frameworks;
@@ -265,6 +319,7 @@
 				88BEC0B920839CF300F84D89 /* Sources */,
 				88BEC0BA20839CF300F84D89 /* Frameworks */,
 				88BEC0BB20839CF300F84D89 /* Resources */,
+				88AB3A0420B00BEA0061DCF0 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -362,6 +417,7 @@
 				88BEC0CB20839CF400F84D89 /* LaunchScreen.storyboard in Resources */,
 				88BEC0FE2084F92200F84D89 /* Browser.storyboard in Resources */,
 				88BEC0C820839CF400F84D89 /* Assets.xcassets in Resources */,
+				887C2C9120B147A90026A1BC /* Filer.storyboard in Resources */,
 				88BEC0C620839CF300F84D89 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -382,12 +438,38 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		88AB3A0420B00BEA0061DCF0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Moya.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxMoya.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		88BEC0B920839CF300F84D89 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				88BEC0C120839CF300F84D89 /* AppDelegate.swift in Sources */,
+				887C2C9520B14E6B0026A1BC /* FilerCollectionViewCell.swift in Sources */,
+				887C2C8920B01AB50026A1BC /* ScraperEntity.swift in Sources */,
+				887C2C8720B019EB0026A1BC /* ScraperStore.swift in Sources */,
+				887C2C9320B147E70026A1BC /* FilerCollectionViewController.swift in Sources */,
+				88AB39FD20B00A830061DCF0 /* ScraperAPI.swift in Sources */,
 				88BEC1012084FCC300F84D89 /* BrowserViewController.swift in Sources */,
 				88BEC0FB2084F30F00F84D89 /* RootTabBarController.swift in Sources */,
 			);
@@ -425,6 +507,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		887C2C8F20B147A90026A1BC /* Filer.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				887C2C9020B147A90026A1BC /* Base */,
+			);
+			name = Filer.storyboard;
+			sourceTree = "<group>";
+		};
 		88BEC0C420839CF300F84D89 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -572,6 +662,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B9QFL4ZF2R;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Camotes/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -590,6 +684,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B9QFL4ZF2R;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Camotes/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

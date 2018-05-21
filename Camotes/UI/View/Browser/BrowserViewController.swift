@@ -128,8 +128,10 @@ extension BrowserViewController {
         let sheet = UIAlertController(title: "Download Video", message: nil, preferredStyle: .alert)
         
         let cancel = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
-        let action = UIAlertAction(title: "Download", style: .default, handler: {
-            (action: UIAlertAction!) in
+        let action = UIAlertAction(title: "Download", style: .default, handler: {(action: UIAlertAction!) in
+            //
+            //
+            //
             print("download!!")
         })
         
@@ -170,7 +172,7 @@ extension BrowserViewController {
         forwardButton.isEnabled = browser.canGoForward
     }
     
-    // Set current url to search text
+    // Set current url from search text to display
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         if let url = browser.url {
             searchText.text = url.absoluteString
