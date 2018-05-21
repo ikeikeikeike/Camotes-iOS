@@ -23,7 +23,10 @@ internal struct InfoModelTranslator: Translator {
             likeCount:        entity.likeCount,
             viewCount:        entity.viewCount,
             tags:             entity.tags,
-            categories:       entity.categories
+            categories:       entity.categories,
+            entries:          entity.entries,
+            formats:          entity.formats,
+            requestedFormats: entity.requestedFormats
         )
     }
     

@@ -18,7 +18,7 @@ struct ScraperStoreImpl: ScraperStore {
     public func info(url: String, handler: @escaping (SingleEvent<InfoEntity>) -> Void) {
         _ = provider.rx.request(.info(url: url))
             .filterSuccessfulStatusCodes()
-            .map(InfoEntity.self)
+            .map(InfoEntity.self, atKeyPath: "root")
             .subscribe(handler)
     }
     

@@ -5,23 +5,23 @@
 //  Copyright © 2018 Tatsuo Ikeda. All rights reserved.
 //
 import UIKit
-import Compass
+//import Compass
 
 class Routes {
-    static var router = Router()
+//    static var router = Router()
     
     class func initialize() {
         setupRouter()
     }
     
     private class func setupRouter(){
-        Navigator.scheme = "compass"
-        Navigator.routes = [
+//        Navigator.scheme = "compass"
+//        Navigator.routes = [
 //            "aa:{title}",
 //            "ab:{title}",
 //            "dupdater:{section}:{title}",
 //            "dpicker:{section}:{title}",
-        ]
+//        ]
         
 //        router.routes = [
 //            "aa:{title}": AARoute(),

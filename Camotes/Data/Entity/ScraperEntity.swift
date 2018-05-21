@@ -23,25 +23,31 @@ public struct InfoEntity: Codable {
     let viewCount:        Int?
     let tags:             [String]?
     let categories:       [String]?
+    let entries:          [InfoEntity]?
+    let formats:          [InfoEntity]?
+    let requestedFormats: [InfoEntity]?
     
     private enum CodingKeys: String, CodingKey {
         case id               
         case title
-        case webpageUrl     = "webpage_url"
+        case webpageUrl         = "webpage_url"
         case description
-        case manifestUrl    = "manifest_url"
+        case manifestUrl        = "manifest_url"
         case ext              
         case url              
-        case protocols      = "protocol"
+        case protocols          = "protocol"
         case format           
-        case formatId       = "format_id"
+        case formatId           = "format_id"
         case tbr
         case extractor        
         case thumbnail        
         case duration
-        case likeCount      = "like_count"
-        case viewCount      = "view_count"
+        case likeCount          = "like_count"
+        case viewCount          = "view_count"
         case tags
         case categories
+        case entries
+        case formats
+        case requestedFormats   = "requested_formats"
     }
 }

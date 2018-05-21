@@ -23,6 +23,8 @@
 		887C2CA420B3459A0026A1BC /* ScraperModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887C2CA320B3459A0026A1BC /* ScraperModel.swift */; };
 		887C2CA620B345E40026A1BC /* Translator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887C2CA520B345E40026A1BC /* Translator.swift */; };
 		887C2CA820B3464C0026A1BC /* ScraperModelTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887C2CA720B3464C0026A1BC /* ScraperModelTranslator.swift */; };
+		887C2CAA20B350C10026A1BC /* Swinject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887C2CA920B350C10026A1BC /* Swinject.framework */; };
+		887C2CAC20B350D10026A1BC /* SwinjectStoryboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887C2CAB20B350D10026A1BC /* SwinjectStoryboard.framework */; };
 		88AB39FD20B00A830061DCF0 /* ScraperAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AB39FC20B00A830061DCF0 /* ScraperAPI.swift */; };
 		88AB39FF20B00B540061DCF0 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88AB39FE20B00B540061DCF0 /* Alamofire.framework */; };
 		88AB3A0120B00B670061DCF0 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88AB3A0020B00B670061DCF0 /* Result.framework */; };
@@ -73,6 +75,8 @@
 		887C2CA320B3459A0026A1BC /* ScraperModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScraperModel.swift; sourceTree = "<group>"; };
 		887C2CA520B345E40026A1BC /* Translator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translator.swift; sourceTree = "<group>"; };
 		887C2CA720B3464C0026A1BC /* ScraperModelTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScraperModelTranslator.swift; sourceTree = "<group>"; };
+		887C2CA920B350C10026A1BC /* Swinject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swinject.framework; path = Carthage/Build/iOS/Swinject.framework; sourceTree = "<group>"; };
+		887C2CAB20B350D10026A1BC /* SwinjectStoryboard.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwinjectStoryboard.framework; path = Carthage/Build/iOS/SwinjectStoryboard.framework; sourceTree = "<group>"; };
 		88AB39FC20B00A830061DCF0 /* ScraperAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScraperAPI.swift; sourceTree = "<group>"; };
 		88AB39FE20B00B540061DCF0 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		88AB3A0020B00B670061DCF0 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
@@ -100,6 +104,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				887C2CAC20B350D10026A1BC /* SwinjectStoryboard.framework in Frameworks */,
+				887C2CAA20B350C10026A1BC /* Swinject.framework in Frameworks */,
 				887C2C8D20B01B5A0026A1BC /* RxSwift.framework in Frameworks */,
 				887C2C8B20B01B4B0026A1BC /* RxMoya.framework in Frameworks */,
 				88AB3A0320B00B850061DCF0 /* Moya.framework in Frameworks */,
@@ -318,6 +324,8 @@
 		88BEC10220850C2800F84D89 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				887C2CAB20B350D10026A1BC /* SwinjectStoryboard.framework */,
+				887C2CA920B350C10026A1BC /* Swinject.framework */,
 				887C2C8C20B01B5A0026A1BC /* RxSwift.framework */,
 				887C2C8A20B01B4B0026A1BC /* RxMoya.framework */,
 				88AB3A0220B00B850061DCF0 /* Moya.framework */,
@@ -338,7 +346,7 @@
 				88BEC0B920839CF300F84D89 /* Sources */,
 				88BEC0BA20839CF300F84D89 /* Frameworks */,
 				88BEC0BB20839CF300F84D89 /* Resources */,
-				88AB3A0420B00BEA0061DCF0 /* ShellScript */,
+				88AB3A0420B00BEA0061DCF0 /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -458,7 +466,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		88AB3A0420B00BEA0061DCF0 /* ShellScript */ = {
+		88AB3A0420B00BEA0061DCF0 /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -469,7 +477,10 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxMoya.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Swinject.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwinjectStoryboard.framework",
 			);
+			name = "Run Script";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;

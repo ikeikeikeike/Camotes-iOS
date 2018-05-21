@@ -11,6 +11,8 @@ import WebKit
 
 class BrowserViewController: UIViewController, WKNavigationDelegate, UITextFieldDelegate {
     
+    let useCase: ScraperUseCase! = Injector.ct.resolve(ScraperUseCase.self)
+    
     let defaultURL = "https://google.com"
 
     @IBOutlet weak var browser: WKWebView!
@@ -125,22 +127,35 @@ extension BrowserViewController {
     }
     
     @IBAction func showDownload(_ sender: Any) {
-        let sheet = UIAlertController(title: "Download Video", message: nil, preferredStyle: .alert)
-       
+        guard let urlString = browser.url?.absoluteString else {
+           showAlert("cloud not download video")
+           return
+        }
         
-        
-        let cancel = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
-        let action = UIAlertAction(title: "Download", style: .default, handler: {(action: UIAlertAction!) in
-            //
-            //
-            //
-            print("download!!")
-        })
-        
-        sheet.addAction(cancel)
-        sheet.addAction(action)
-        
-        present(sheet, animated: true, completion: nil)
+        useCase.info(url: urlString) { result in
+            switch result {
+            case .success(let info):
+                print(info)
+                
+//                let sheet = UIAlertController(title: "Download Video", message: nil, preferredStyle: .alert)
+////                let cancel = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
+//                let action = UIAlertAction(title: "Download", style: .default, handler: {(action: UIAlertAction!) in
+//                    //
+//                    //
+//                    //
+//                    print("download!!")
+//                })
+//
+//                sheet.addAction(cancel)
+//                sheet.addAction(action)
+//
+//                present(sheet, animated: true, completion: nil)
+
+                
+            case .error(let error):
+                self.showAlert("cloud not download video \(error)")
+            }
+        }
     }
 }
 

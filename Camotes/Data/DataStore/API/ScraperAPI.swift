@@ -23,9 +23,9 @@ extension ScraperAPI: TargetType, AccessTokenAuthorizable {
     var path: String {
         switch self {
         case .info(let url):
-            return "/api/info\(url.data(using: .utf8)?.base64EncodedString() ?? ""))"
+            return "/api/info/\(url.data(using: .utf8)?.base64EncodedString() ?? "")"
         case .stream(let url):
-            return "/api/stream\(url.data(using: .utf8)?.base64EncodedString() ?? "")"
+            return "/api/stream/\(url.data(using: .utf8)?.base64EncodedString() ?? "")"
         }
     }
     

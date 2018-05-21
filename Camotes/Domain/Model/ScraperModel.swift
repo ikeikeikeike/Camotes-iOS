@@ -23,4 +23,8 @@ public struct InfoModel {
     public let viewCount:        Int?
     public let tags:             [String]?
     public let categories:       [String]?
+    public let entries:          [InfoEntity]?
+    public let formats:          [InfoEntity]?
+    public let requestedFormats: [InfoEntity]?
+
 }
