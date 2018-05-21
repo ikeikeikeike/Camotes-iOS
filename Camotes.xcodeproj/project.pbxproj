@@ -21,6 +21,8 @@
 		887C2CA020B344950026A1BC /* Swinject+Injector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887C2C9F20B344950026A1BC /* Swinject+Injector.swift */; };
 		887C2CA220B3450D0026A1BC /* ScraperRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887C2CA120B3450D0026A1BC /* ScraperRepo.swift */; };
 		887C2CA420B3459A0026A1BC /* ScraperModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887C2CA320B3459A0026A1BC /* ScraperModel.swift */; };
+		887C2CA620B345E40026A1BC /* Translator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887C2CA520B345E40026A1BC /* Translator.swift */; };
+		887C2CA820B3464C0026A1BC /* ScraperModelTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887C2CA720B3464C0026A1BC /* ScraperModelTranslator.swift */; };
 		88AB39FD20B00A830061DCF0 /* ScraperAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AB39FC20B00A830061DCF0 /* ScraperAPI.swift */; };
 		88AB39FF20B00B540061DCF0 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88AB39FE20B00B540061DCF0 /* Alamofire.framework */; };
 		88AB3A0120B00B670061DCF0 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88AB3A0020B00B670061DCF0 /* Result.framework */; };
@@ -69,6 +71,8 @@
 		887C2C9F20B344950026A1BC /* Swinject+Injector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Swinject+Injector.swift"; sourceTree = "<group>"; };
 		887C2CA120B3450D0026A1BC /* ScraperRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScraperRepo.swift; sourceTree = "<group>"; };
 		887C2CA320B3459A0026A1BC /* ScraperModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScraperModel.swift; sourceTree = "<group>"; };
+		887C2CA520B345E40026A1BC /* Translator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translator.swift; sourceTree = "<group>"; };
+		887C2CA720B3464C0026A1BC /* ScraperModelTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScraperModelTranslator.swift; sourceTree = "<group>"; };
 		88AB39FC20B00A830061DCF0 /* ScraperAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScraperAPI.swift; sourceTree = "<group>"; };
 		88AB39FE20B00B540061DCF0 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		88AB3A0020B00B670061DCF0 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
@@ -122,22 +126,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		882BFEF02087A4C300DB67F1 /* Storyboard */ = {
-			isa = PBXGroup;
-			children = (
-				88BEC0C920839CF400F84D89 /* LaunchScreen.storyboard */,
-				88BEC0C420839CF300F84D89 /* Main.storyboard */,
-				887C2C8F20B147A90026A1BC /* Filer.storyboard */,
-				88BEC0FC2084F92200F84D89 /* Browser.storyboard */,
-			);
-			path = Storyboard;
-			sourceTree = "<group>";
-		};
 		887C2C8E20B144530026A1BC /* Filer */ = {
 			isa = PBXGroup;
 			children = (
 				887C2C9220B147E70026A1BC /* FilerCollectionViewController.swift */,
 				887C2C9420B14E6B0026A1BC /* FilerCollectionViewCell.swift */,
+				887C2C8F20B147A90026A1BC /* Filer.storyboard */,
 			);
 			path = Filer;
 			sourceTree = "<group>";
@@ -190,6 +184,8 @@
 				88BEC0EE2084F11F00F84D89 /* UI */,
 				887C2C9820B3426B0026A1BC /* Routes */,
 				88BEC0C020839CF300F84D89 /* AppDelegate.swift */,
+				88BEC0C920839CF400F84D89 /* LaunchScreen.storyboard */,
+				88BEC0C420839CF300F84D89 /* Main.storyboard */,
 				88BEC0C720839CF400F84D89 /* Assets.xcassets */,
 				88BEC0CC20839CF400F84D89 /* Info.plist */,
 			);
@@ -217,9 +213,7 @@
 		88BEC0EE2084F11F00F84D89 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				88BEC0F22084F17000F84D89 /* Presenter */,
 				88BEC0F12084F16A00F84D89 /* View */,
-				882BFEF02087A4C300DB67F1 /* Storyboard */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -254,13 +248,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		88BEC0F22084F17000F84D89 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
 		88BEC0F32084F1B700F84D89 /* UseCaes */ = {
 			isa = PBXGroup;
 			children = (
@@ -280,6 +267,8 @@
 		88BEC0F52084F1C300F84D89 /* Trans */ = {
 			isa = PBXGroup;
 			children = (
+				887C2CA520B345E40026A1BC /* Translator.swift */,
+				887C2CA720B3464C0026A1BC /* ScraperModelTranslator.swift */,
 			);
 			path = Trans;
 			sourceTree = "<group>";
@@ -321,6 +310,7 @@
 			isa = PBXGroup;
 			children = (
 				88BEC1002084FCC300F84D89 /* BrowserViewController.swift */,
+				88BEC0FC2084F92200F84D89 /* Browser.storyboard */,
 			);
 			path = Browser;
 			sourceTree = "<group>";
@@ -498,9 +488,11 @@
 				887C2C9520B14E6B0026A1BC /* FilerCollectionViewCell.swift in Sources */,
 				887C2CA220B3450D0026A1BC /* ScraperRepo.swift in Sources */,
 				887C2C8920B01AB50026A1BC /* ScraperEntity.swift in Sources */,
+				887C2CA620B345E40026A1BC /* Translator.swift in Sources */,
 				887C2C9E20B344670026A1BC /* SwinjectStoryboard+Injector.swift in Sources */,
 				887C2CA020B344950026A1BC /* Swinject+Injector.swift in Sources */,
 				887C2C8720B019EB0026A1BC /* ScraperStore.swift in Sources */,
+				887C2CA820B3464C0026A1BC /* ScraperModelTranslator.swift in Sources */,
 				887C2C9320B147E70026A1BC /* FilerCollectionViewController.swift in Sources */,
 				88AB39FD20B00A830061DCF0 /* ScraperAPI.swift in Sources */,
 				887C2C9A20B342DE0026A1BC /* Routes+UIViewController.swift in Sources */,

@@ -22,7 +22,7 @@ public struct ScraperUseCaseImpl: ScraperUseCase {
         scraperRepo.info(url: url) { event in
             switch event {
             case .success(let entity):
-                let model = SignioModelTranslator().translate(entity)
+                let model = InfoModelTranslator().translate(entity)
                 handler(SingleEvent.success(model))
             case .error(let error):
                 handler(SingleEvent.error(error))
