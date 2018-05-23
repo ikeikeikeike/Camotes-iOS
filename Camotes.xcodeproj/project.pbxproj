@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		884209C320B5BAF300EB9CB2 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 884209C220B5BAF300EB9CB2 /* Realm.framework */; };
+		884209C520B5BAFF00EB9CB2 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 884209C420B5BAFF00EB9CB2 /* RealmSwift.framework */; };
+		884209C820B5BBE600EB9CB2 /* FilerStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884209C720B5BBE600EB9CB2 /* FilerStore.swift */; };
+		884209CA20B5C11800EB9CB2 /* FilerDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884209C920B5C11800EB9CB2 /* FilerDB.swift */; };
 		887C2C8720B019EB0026A1BC /* ScraperStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887C2C8620B019EB0026A1BC /* ScraperStore.swift */; };
 		887C2C8920B01AB50026A1BC /* ScraperEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887C2C8820B01AB50026A1BC /* ScraperEntity.swift */; };
 		887C2C8B20B01B4B0026A1BC /* RxMoya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887C2C8A20B01B4B0026A1BC /* RxMoya.framework */; };
@@ -59,6 +63,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		884209C220B5BAF300EB9CB2 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		884209C420B5BAFF00EB9CB2 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		884209C720B5BBE600EB9CB2 /* FilerStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilerStore.swift; sourceTree = "<group>"; };
+		884209C920B5C11800EB9CB2 /* FilerDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilerDB.swift; sourceTree = "<group>"; };
 		887C2C8620B019EB0026A1BC /* ScraperStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScraperStore.swift; sourceTree = "<group>"; };
 		887C2C8820B01AB50026A1BC /* ScraperEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScraperEntity.swift; sourceTree = "<group>"; };
 		887C2C8A20B01B4B0026A1BC /* RxMoya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxMoya.framework; path = Carthage/Build/iOS/RxMoya.framework; sourceTree = "<group>"; };
@@ -104,6 +112,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				884209C520B5BAFF00EB9CB2 /* RealmSwift.framework in Frameworks */,
+				884209C320B5BAF300EB9CB2 /* Realm.framework in Frameworks */,
 				887C2CAC20B350D10026A1BC /* SwinjectStoryboard.framework in Frameworks */,
 				887C2CAA20B350C10026A1BC /* Swinject.framework in Frameworks */,
 				887C2C8D20B01B5A0026A1BC /* RxSwift.framework in Frameworks */,
@@ -132,12 +142,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		884209C620B5BB9C00EB9CB2 /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				884209C920B5C11800EB9CB2 /* FilerDB.swift */,
+			);
+			path = DB;
+			sourceTree = "<group>";
+		};
 		887C2C8E20B144530026A1BC /* Filer */ = {
 			isa = PBXGroup;
 			children = (
+				887C2C8F20B147A90026A1BC /* Filer.storyboard */,
 				887C2C9220B147E70026A1BC /* FilerCollectionViewController.swift */,
 				887C2C9420B14E6B0026A1BC /* FilerCollectionViewCell.swift */,
-				887C2C8F20B147A90026A1BC /* Filer.storyboard */,
 			);
 			path = Filer;
 			sourceTree = "<group>";
@@ -298,8 +316,10 @@
 		88BEC0F82084F1EF00F84D89 /* DataStore */ = {
 			isa = PBXGroup;
 			children = (
+				884209C620B5BB9C00EB9CB2 /* DB */,
 				88AB39FA20B00A3B0061DCF0 /* API */,
 				887C2C8620B019EB0026A1BC /* ScraperStore.swift */,
+				884209C720B5BBE600EB9CB2 /* FilerStore.swift */,
 			);
 			path = DataStore;
 			sourceTree = "<group>";
@@ -315,8 +335,8 @@
 		88BEC0FF2084F93700F84D89 /* Browser */ = {
 			isa = PBXGroup;
 			children = (
-				88BEC1002084FCC300F84D89 /* BrowserViewController.swift */,
 				88BEC0FC2084F92200F84D89 /* Browser.storyboard */,
+				88BEC1002084FCC300F84D89 /* BrowserViewController.swift */,
 			);
 			path = Browser;
 			sourceTree = "<group>";
@@ -324,6 +344,8 @@
 		88BEC10220850C2800F84D89 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				884209C420B5BAFF00EB9CB2 /* RealmSwift.framework */,
+				884209C220B5BAF300EB9CB2 /* Realm.framework */,
 				887C2CAB20B350D10026A1BC /* SwinjectStoryboard.framework */,
 				887C2CA920B350C10026A1BC /* Swinject.framework */,
 				887C2C8C20B01B5A0026A1BC /* RxSwift.framework */,
@@ -479,6 +501,8 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Swinject.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwinjectStoryboard.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
 			);
 			name = "Run Script";
 			outputPaths = (
@@ -498,6 +522,7 @@
 				88BEC0C120839CF300F84D89 /* AppDelegate.swift in Sources */,
 				887C2C9520B14E6B0026A1BC /* FilerCollectionViewCell.swift in Sources */,
 				887C2CA220B3450D0026A1BC /* ScraperRepo.swift in Sources */,
+				884209C820B5BBE600EB9CB2 /* FilerStore.swift in Sources */,
 				887C2C8920B01AB50026A1BC /* ScraperEntity.swift in Sources */,
 				887C2CA620B345E40026A1BC /* Translator.swift in Sources */,
 				887C2C9E20B344670026A1BC /* SwinjectStoryboard+Injector.swift in Sources */,
@@ -507,6 +532,7 @@
 				887C2C9320B147E70026A1BC /* FilerCollectionViewController.swift in Sources */,
 				88AB39FD20B00A830061DCF0 /* ScraperAPI.swift in Sources */,
 				887C2C9A20B342DE0026A1BC /* Routes+UIViewController.swift in Sources */,
+				884209CA20B5C11800EB9CB2 /* FilerDB.swift in Sources */,
 				887C2C9720B340D60026A1BC /* ScraperUseCase.swift in Sources */,
 				887C2C9C20B343980026A1BC /* Routes.swift in Sources */,
 				88BEC1012084FCC300F84D89 /* BrowserViewController.swift in Sources */,

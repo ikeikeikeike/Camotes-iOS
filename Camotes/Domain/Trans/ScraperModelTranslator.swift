@@ -6,9 +6,9 @@ import Foundation
 internal struct InfoModelTranslator: Translator {
     internal func translate(_ entity: InfoEntity) -> InfoModel {
         return InfoModel(
-            id:               entity.id,
-            title:            entity.title,
-            webpageUrl:       entity.webpageUrl,
+            id:               entity.id ?? "",
+            title:            entity.title ?? "",
+            webpageUrl:       entity.webpageUrl ?? "",
             description:      entity.description,
             manifestUrl:      entity.manifestUrl,
             ext:              entity.ext,
@@ -24,9 +24,9 @@ internal struct InfoModelTranslator: Translator {
             viewCount:        entity.viewCount,
             tags:             entity.tags,
             categories:       entity.categories,
-            entries:          entity.entries,
-            formats:          entity.formats,
-            requestedFormats: entity.requestedFormats
+            entries:          entity.entries.map(translate),
+            formats:          entity.formats.map(translate),
+            requestedFormats: entity.requestedFormats.map(translate)
         )
     }
     

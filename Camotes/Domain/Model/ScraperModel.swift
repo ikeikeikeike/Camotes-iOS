@@ -5,9 +5,9 @@
 //
 
 public struct InfoModel {
-    public let id:               String?
-    public let title:            String?
-    public let webpageUrl:       String?
+    public let id:               String
+    public let title:            String
+    public let webpageUrl:       String
     public let description:      String?
     public let manifestUrl:      String?
     public let ext:              String?
@@ -23,8 +23,8 @@ public struct InfoModel {
     public let viewCount:        Int?
     public let tags:             [String]?
     public let categories:       [String]?
-    public let entries:          [InfoEntity]?
-    public let formats:          [InfoEntity]?
-    public let requestedFormats: [InfoEntity]?
+    public let entries:          [InfoModel]?
+    public let formats:          [InfoModel]?
+    public let requestedFormats: [InfoModel]?
 
 }
