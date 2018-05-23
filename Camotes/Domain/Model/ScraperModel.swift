@@ -8,9 +8,10 @@ public struct InfoModel {
     public let id:               String
     public let title:            String
     public let webpageUrl:       String
+    public let webpageBasename:  String
     public let description:      String?
     public let manifestUrl:      String?
-    public let ext:              String?
+    public let ext:              String
     public let url:              String?
     public let protocols:        String?
     public let format:           String?

@@ -135,22 +135,21 @@ extension BrowserViewController {
         useCase.info(url: urlString) { result in
             switch result {
             case .success(let info):
-                print(info)
+                let message = "\(info.webpageBasename).\(info.ext)"
                 
-//                let sheet = UIAlertController(title: "Download Video", message: nil, preferredStyle: .alert)
-////                let cancel = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
-//                let action = UIAlertAction(title: "Download", style: .default, handler: {(action: UIAlertAction!) in
-//                    //
-//                    //
-//                    //
-//                    print("download!!")
-//                })
-//
-//                sheet.addAction(cancel)
-//                sheet.addAction(action)
-//
-//                present(sheet, animated: true, completion: nil)
+                let sheet = UIAlertController(title: "Download Video", message: message, preferredStyle: .alert)
+                let cancel = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
+                let action = UIAlertAction(title: "Download", style: .default, handler: {(action: UIAlertAction!) in
+                    //                print(info)
+                    //
+                    //
+                    print("download!!")
+                })
 
+                sheet.addAction(cancel)
+                sheet.addAction(action)
+
+                self.present(sheet, animated: true, completion: nil)
                 
             case .error(let error):
                 self.showAlert("cloud not download video \(error)")

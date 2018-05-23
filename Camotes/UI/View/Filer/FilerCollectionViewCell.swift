@@ -15,11 +15,8 @@ class FilerCollectionViewCell: UICollectionViewCell {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        // cellの枠の太さ
-        self.layer.borderWidth = 1.0
-        // cellの枠の色
-        self.layer.borderColor = UIColor.black.cgColor
-        // cellを丸くする
+        self.layer.borderWidth  = 1.0
+        self.layer.borderColor  = UIColor.black.cgColor
         self.layer.cornerRadius = 8.0
     }
 }

@@ -8,6 +8,7 @@ public struct InfoEntity: Codable {
     let id:               String?
     let title:            String?
     let webpageUrl:       String?
+    let webpageBasename:  String?
     let description:      String?
     let manifestUrl:      String?
     let ext:              String?
@@ -31,6 +32,7 @@ public struct InfoEntity: Codable {
         case id               
         case title
         case webpageUrl         = "webpage_url"
+        case webpageBasename    = "webpage_url_basename"
         case description
         case manifestUrl        = "manifest_url"
         case ext              

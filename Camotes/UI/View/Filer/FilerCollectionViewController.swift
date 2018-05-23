@@ -12,9 +12,7 @@ private let reuseIdentifier = "FilerCollectionViewCell"
 
 class FilerCollectionViewController: UICollectionViewController {
     
-    // cellの色の配列
     let colors: [UIColor] = [.black, .blue, .brown, .cyan, .darkGray, .darkText, .gray, .green, .lightGray, .orange, .red]
-    // cellの色の名前の配列
     let colorNames: [String] = ["black", "blue", "brown", "cyan", "darkGray", "darkText", "gray", "green", "lightGray", "orange", "red"]
     
    
