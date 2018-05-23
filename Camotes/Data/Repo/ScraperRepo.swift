@@ -13,7 +13,6 @@ public protocol ScraperRepo {
 }
 
 public struct ScraperRepoImpl: ScraperRepo {
-    public static let shared: ScraperRepo = ScraperRepoImpl()
     fileprivate let store: ScraperStore! = Injector.ct.resolve(ScraperStore.self)
     
     public func info(url: String, handler: @escaping (SingleEvent<InfoEntity>) -> Void) {

@@ -20,5 +20,7 @@ final class Injector {
         ct.register(ScraperStore.self) { _ in ScraperStoreImpl() }
         ct.register(ScraperRepo.self) { _ in ScraperRepoImpl() }
         ct.register(ScraperUseCase.self) { _ in ScraperUseCaseImpl() }
+       
+        ct.register(FilerStore.self) { _ in FilerStoreImpl() }
     }
 }
