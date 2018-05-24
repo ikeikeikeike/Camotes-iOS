@@ -8,22 +8,16 @@ extension SwinjectStoryboard {
     @objc class func setup() {
         Injector.initialize()
         
-        let ct = SwinjectStoryboard.defaultContainer
+//        let ct = SwinjectStoryboard.defaultContainer
         
-//        ct.register(ChartPresenter.self) { _ in ChartPresenterImpl() }
-//        ct.storyboardInitCompleted(ChartViewController.self) { r, vc in
-//            vc.presenter = r.resolve(ChartPresenter.self)
+//        ct.storyboardInitCompleted(BrowserViewController.self) { r, vc in
+//            vc.useCase = r.resolve(BrowserUseCase.self)
 //        }
-//        ct.storyboardInitCompleted(CoincheckJPYViewController.self) { r, vc in
-//            vc.presenter = r.resolve(ChartPresenter.self)
+//
+//        ct.storyboardInitCompleted(FilerCollectionViewController.self) { r, vc in
+//            vc.useCase = r.resolve(FilerUseCase.self)
 //        }
-//        ct.storyboardInitCompleted(BitflyerJPYViewController.self) { r, vc in
-//            vc.presenter = r.resolve(ChartPresenter.self)
-//        }
-//        ct.storyboardInitCompleted(ZaifJPYViewController.self) { r, vc in
-//            vc.presenter = r.resolve(ChartPresenter.self)
-//        }
-//        
+
 //        ct.register(LoginPresenter.self) { _ in LoginPresenterImpl() }
 //        ct.storyboardInitCompleted(LoginViewController.self) { r, vc in
 //            //            vc.tokenKey = r.resolve(TokenKey.self)

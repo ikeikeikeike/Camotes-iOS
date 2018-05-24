@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-public class FilerEntity: DBObject {
+public class FilerObject: DBObject {
     @objc dynamic var url          = ""
     @objc dynamic var site         = ""
     @objc dynamic var title        = ""

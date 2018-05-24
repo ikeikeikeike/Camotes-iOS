@@ -7,17 +7,25 @@
 //
 
 import UIKit
+import RealmSwift
 
 private let reuseIdentifier = "FilerCollectionViewCell"
 
 class FilerCollectionViewController: UICollectionViewController {
     
+    let useCase: FilerUseCase! = Injector.ct.resolve(FilerUseCase.self)
+    var files: Results<FilerObject>!
+
     let colors: [UIColor] = [.black, .blue, .brown, .cyan, .darkGray, .darkText, .gray, .green, .lightGray, .orange, .red]
     let colorNames: [String] = ["black", "blue", "brown", "cyan", "darkGray", "darkText", "gray", "green", "lightGray", "orange", "red"]
-    
    
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+        files = useCase.files()
+        files.observe { [weak self] (changes: RealmCollectionChange) in
+            self?.collectionView?.reloadData()
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -53,7 +61,7 @@ class FilerCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return colors.count
+        return files.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

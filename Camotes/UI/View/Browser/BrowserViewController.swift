@@ -11,7 +11,7 @@ import WebKit
 
 class BrowserViewController: UIViewController, WKNavigationDelegate, UITextFieldDelegate {
     
-    let useCase: DownloadUseCase! = Injector.ct.resolve(DownloadUseCase.self)
+    let useCase: BrowserUseCase! = Injector.ct.resolve(BrowserUseCase.self)
     
     let defaultURL = "https://google.com"
 

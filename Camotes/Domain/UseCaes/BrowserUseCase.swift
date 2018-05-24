@@ -10,17 +10,17 @@ import Moya
 import RxMoya
 import RxSwift
 
-public protocol DownloadUseCase {
+public protocol BrowserUseCase {
     func info(url: String, handler: @escaping (SingleEvent<InfoModel>) -> Void)
     func store(data: InfoModel) -> Bool
 }
 
-public struct DownloadUseCaseImpl: DownloadUseCase {
+public struct BrowserUseCaseImpl: BrowserUseCase {
     
     fileprivate let scraperRepo: ScraperRepo! = Injector.ct.resolve(ScraperRepo.self)
     fileprivate let filerRepo: FilerRepo! = Injector.ct.resolve(FilerRepo.self)
     
-    private let filerEntityTrans = FilerEntityTranslator()
+    private let filerObjectTrans = FilerObjectTranslator()
     private let infoModelTrans = InfoModelTranslator()
     
     public func info(url: String, handler: @escaping (SingleEvent<InfoModel>) -> Void) {
@@ -36,6 +36,6 @@ public struct DownloadUseCaseImpl: DownloadUseCase {
     }
     
     public func store(data: InfoModel) -> Bool {
-        return filerRepo.save(data: filerEntityTrans.translate(data))
+        return filerRepo.save(data: filerObjectTrans.translate(data))
     }
 }

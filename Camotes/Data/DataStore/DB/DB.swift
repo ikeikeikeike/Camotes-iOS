@@ -26,7 +26,7 @@ class DBBase<DBType: DBObject> {
         return realm.objects(DBType.self).filter("id == '\(id)'").first
     }
     
-    public func all() -> Results<DBType>? {
+    public func all() -> Results<DBType> {
         return realm.objects(DBType.self)  
     }
 

@@ -23,6 +23,8 @@ final class Injector {
         ct.register(FilerRepo.self) { _ in FilerRepoImpl() }
         ct.register(FilerStore.self) { _ in FilerStoreImpl() }
         
-        ct.register(DownloadUseCase.self) { _ in DownloadUseCaseImpl() }
+        ct.register(BrowserUseCase.self) { _ in BrowserUseCaseImpl() }
+        ct.register(FilerUseCase.self) { _ in FilerUseCaseImpl() }
+
     }
 }
