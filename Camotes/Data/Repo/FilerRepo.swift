@@ -11,8 +11,8 @@ import RealmSwift
 public protocol FilerRepo {
     func get(id: String) -> FilerEntity?
     func all() -> Results<FilerEntity>?
-    func update(data: Object) -> Bool
-    func delete(data: Object) -> Bool
+    func save(data: FilerEntity) -> Bool
+    func delete(data: FilerEntity) -> Bool
 }
 
 public struct FilerRepoImpl: FilerRepo {
@@ -26,11 +26,11 @@ public struct FilerRepoImpl: FilerRepo {
         return store.all()
     }
     
-    public func update(data: Object) -> Bool {
-        return store.update(data: data)
+    public func save(data: FilerEntity) -> Bool {
+        return store.save(data: data)
     }
     
-    public func delete(data: Object) -> Bool {
+    public func delete(data: FilerEntity) -> Bool {
         return store.delete(data: data)
     }
 }

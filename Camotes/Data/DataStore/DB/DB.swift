@@ -8,8 +8,18 @@
 import Foundation
 import RealmSwift
 
+public class DBObject: Object {
+    @objc dynamic var id = NSUUID().uuidString
+    
+    override public static func primaryKey() -> String? {
+        return "id"
+    }
+    //    override static func indexedProperties() -> [String] {
+    //        return ["title"]
+    //    }
+}
 
-class DBBase<DBType: Object> {
+class DBBase<DBType: DBObject> {
     let realm = try! Realm()
     
     public func get(id: String) -> DBType? {
@@ -17,14 +27,22 @@ class DBBase<DBType: Object> {
     }
     
     public func all() -> Results<DBType>? {
-        return realm.objects(DBType.self)
+        return realm.objects(DBType.self)  
+    }
+
+    public func save(data: DBType) -> Bool {
+        return get(id: data.id) == nil ? create(data: data) : update(data: data)
     }
     
-    public func update(data: Object) -> Bool {
-        return (try? realm.write { realm.add(data, update: true) }) == nil
+    public func create(data: DBType) -> Bool {
+        return (try? realm.write { realm.add(data) }) != nil
     }
     
-    public func delete(data: Object) -> Bool {
-        return (try? realm.write { realm.delete(data) }) == nil
+    public func update(data: DBType) -> Bool {
+        return (try? realm.write { realm.add(data, update: true) }) != nil
+    }
+    
+    public func delete(data: DBType) -> Bool {
+        return (try? realm.write { realm.delete(data) }) != nil
     }
 }

@@ -9,22 +9,12 @@
 import Foundation
 import RealmSwift
 
-public class FilerEntity: Object {
-    @objc dynamic var id           = NSUUID().uuidString
+public class FilerEntity: DBObject {
     @objc dynamic var url          = ""
     @objc dynamic var site         = ""
     @objc dynamic var title        = ""
-    @objc dynamic var thumb: Data? = nil
-    let duration                   = RealmOptional<Int>()
+    @objc dynamic var thumb        = Data()
+    var duration                   = RealmOptional<Int>()
 //    let likes                      = RealmOptional<Int>()
 //    let views                      = RealmOptional<Int>()
-
-    override public static func primaryKey() -> String? {
-        return "id"
-    }
-    
-    //    override static func indexedProperties() -> [String] {
-    //        return ["title"]
-    //    }
-    
 }

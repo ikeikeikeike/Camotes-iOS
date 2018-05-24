@@ -11,7 +11,7 @@ import WebKit
 
 class BrowserViewController: UIViewController, WKNavigationDelegate, UITextFieldDelegate {
     
-    let useCase: ScraperUseCase! = Injector.ct.resolve(ScraperUseCase.self)
+    let useCase: DownloadUseCase! = Injector.ct.resolve(DownloadUseCase.self)
     
     let defaultURL = "https://google.com"
 
@@ -140,10 +140,11 @@ extension BrowserViewController {
                 let sheet = UIAlertController(title: "Download Video", message: message, preferredStyle: .alert)
                 let cancel = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
                 let action = UIAlertAction(title: "Download", style: .default, handler: {(action: UIAlertAction!) in
-                    //                print(info)
-                    //
-                    //
-                    print("download!!")
+                    if self.useCase.store(data: info) {
+                        self.showAlert("successfully download")
+                    } else {
+                        self.showAlert("failed to download video")
+                    }
                 })
 
                 sheet.addAction(cancel)
@@ -152,7 +153,7 @@ extension BrowserViewController {
                 self.present(sheet, animated: true, completion: nil)
                 
             case .error(let error):
-                self.showAlert("cloud not download video \(error)")
+                self.showAlert("failed to download video \(error)")
             }
         }
     }

@@ -11,10 +11,8 @@ import RealmSwift
 protocol FilerStore {
     func get(id: String) -> FilerEntity?
     func all() -> Results<FilerEntity>?
-    func update(data: Object) -> Bool
-    func delete(data: Object) -> Bool
+    func save(data: FilerEntity) -> Bool
+    func delete(data: FilerEntity) -> Bool
 }
 
-class FilerStoreImpl: DBBase<FilerEntity>, FilerStore {
-    
-}
+class FilerStoreImpl: DBBase<FilerEntity>, FilerStore {}
