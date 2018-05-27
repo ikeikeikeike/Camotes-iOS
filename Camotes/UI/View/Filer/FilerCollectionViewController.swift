@@ -9,36 +9,44 @@
 import UIKit
 import RealmSwift
 
-private let reuseIdentifier = "FilerCollectionViewCell"
+private let reuseID = "FilerCollectionViewCell"
 
 class FilerCollectionViewController: UICollectionViewController {
     
     let useCase: FilerUseCase! = Injector.ct.resolve(FilerUseCase.self)
     var files: Results<FilerObject>!
-
-    let colors: [UIColor] = [.black, .blue, .brown, .cyan, .darkGray, .darkText, .gray, .green, .lightGray, .orange, .red]
-    let colorNames: [String] = ["black", "blue", "brown", "cyan", "darkGray", "darkText", "gray", "green", "lightGray", "orange", "red"]
+    var notifyToken: NotificationToken? = nil
    
+    deinit {
+        notifyToken?.invalidate()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
        
         files = useCase.files()
-        files.observe { [weak self] (changes: RealmCollectionChange) in
-            self?.collectionView?.reloadData()
+        notifyToken = files.observe { [weak self] (changes: RealmCollectionChange) in
+            guard let cview = self?.collectionView else { return }
+            
+            switch changes {
+            case .initial:
+                // Results are now populated and can be accessed without blocking the UI
+                cview.reloadData()
+            case .update(_, let deletions, let insertions, let modifications):
+                // Query results have changed, so apply them to the UITableView
+                cview.insertItems(at: insertions.map({ IndexPath(row: $0, section: 0) }))
+                cview.deleteItems(at: deletions.map({ IndexPath(row: $0, section: 0)}))
+                cview.reloadItems(at: modifications.map({ IndexPath(row: $0, section: 0) }))
+            case .error(let error):
+                // An error occurred while opening the Realm file on the background worker thread
+                fatalError("\(error)")
+            }
         }
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-//        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     /*
@@ -54,22 +62,21 @@ class FilerCollectionViewController: UICollectionViewController {
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
-
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
         return files.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! FilerCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseID, for: indexPath) as! FilerCollectionViewCell
+       
+        let file = files[indexPath.row]
+        cell.label.text = file.title
+        cell.label.backgroundColor = Optional(UIColor(red: 0, green: 0, blue: 0, alpha: 0.5))
+        cell.image.image = UIImage(data: (file.thumb))
 
-        cell.label.backgroundColor = colors[indexPath.item]
-        cell.name.text = colorNames[indexPath.item]
-    
         return cell
     }
 
@@ -104,4 +111,13 @@ class FilerCollectionViewController: UICollectionViewController {
     }
     */
 
+
 }
+
+extension FilerCollectionViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let size: CGFloat = (UIScreen.main.bounds.width / 2) - 1.0
+        return CGSize(width: size, height: size - 20.0)
+    }
+}
+
