@@ -10,7 +10,7 @@
 		884209C320B5BAF300EB9CB2 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 884209C220B5BAF300EB9CB2 /* Realm.framework */; };
 		884209C520B5BAFF00EB9CB2 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 884209C420B5BAFF00EB9CB2 /* RealmSwift.framework */; };
 		884209C820B5BBE600EB9CB2 /* FilerStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884209C720B5BBE600EB9CB2 /* FilerStore.swift */; };
-		884209CA20B5C11800EB9CB2 /* FilerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884209C920B5C11800EB9CB2 /* FilerEntity.swift */; };
+		884209CA20B5C11800EB9CB2 /* FilerObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884209C920B5C11800EB9CB2 /* FilerObject.swift */; };
 		884209CC20B5C76600EB9CB2 /* DB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884209CB20B5C76600EB9CB2 /* DB.swift */; };
 		884209CE20B5D68100EB9CB2 /* FilerRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884209CD20B5D68100EB9CB2 /* FilerRepo.swift */; };
 		884209D020B6FE2C00EB9CB2 /* FilerEntityTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884209CF20B6FE2C00EB9CB2 /* FilerEntityTranslator.swift */; };
@@ -70,7 +70,7 @@
 		884209C220B5BAF300EB9CB2 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		884209C420B5BAFF00EB9CB2 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		884209C720B5BBE600EB9CB2 /* FilerStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilerStore.swift; sourceTree = "<group>"; };
-		884209C920B5C11800EB9CB2 /* FilerEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilerEntity.swift; sourceTree = "<group>"; };
+		884209C920B5C11800EB9CB2 /* FilerObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilerObject.swift; sourceTree = "<group>"; };
 		884209CB20B5C76600EB9CB2 /* DB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DB.swift; sourceTree = "<group>"; };
 		884209CD20B5D68100EB9CB2 /* FilerRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilerRepo.swift; sourceTree = "<group>"; };
 		884209CF20B6FE2C00EB9CB2 /* FilerEntityTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilerEntityTranslator.swift; sourceTree = "<group>"; };
@@ -292,7 +292,7 @@
 		88BEC0F42084F1BC00F84D89 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				884209C920B5C11800EB9CB2 /* FilerEntity.swift */,
+				884209C920B5C11800EB9CB2 /* FilerObject.swift */,
 				887C2CA320B3459A0026A1BC /* ScraperModel.swift */,
 			);
 			path = Model;
@@ -548,7 +548,7 @@
 				884209CC20B5C76600EB9CB2 /* DB.swift in Sources */,
 				884209D020B6FE2C00EB9CB2 /* FilerEntityTranslator.swift in Sources */,
 				887C2C9A20B342DE0026A1BC /* Routes+UIViewController.swift in Sources */,
-				884209CA20B5C11800EB9CB2 /* FilerEntity.swift in Sources */,
+				884209CA20B5C11800EB9CB2 /* FilerObject.swift in Sources */,
 				887C2C9720B340D60026A1BC /* BrowserUseCase.swift in Sources */,
 				887C2C9C20B343980026A1BC /* Routes.swift in Sources */,
 				88BEC1012084FCC300F84D89 /* BrowserViewController.swift in Sources */,

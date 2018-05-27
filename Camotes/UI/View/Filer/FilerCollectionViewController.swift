@@ -74,7 +74,6 @@ class FilerCollectionViewController: UICollectionViewController {
        
         let file = files[indexPath.row]
         cell.label.text = file.title
-        cell.label.backgroundColor = Optional(UIColor(red: 0, green: 0, blue: 0, alpha: 0.5))
         cell.image.image = UIImage(data: (file.thumb))
 
         return cell
@@ -116,7 +115,7 @@ class FilerCollectionViewController: UICollectionViewController {
 
 extension FilerCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let size: CGFloat = (UIScreen.main.bounds.width / 2) - 1.0
+        let size: CGFloat = (UIScreen.main.bounds.width / 2) - 5.0
         return CGSize(width: size, height: size - 20.0)
     }
 }

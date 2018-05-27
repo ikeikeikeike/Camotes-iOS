@@ -19,4 +19,11 @@ class FilerCollectionViewCell: UICollectionViewCell {
         layer.borderColor  = UIColor.black.cgColor
         layer.cornerRadius = 10.0
     }
+   
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        label.backgroundColor = Optional(UIColor(red: 0, green: 0, blue: 0, alpha: 0.5))
+    }
+    
 }
