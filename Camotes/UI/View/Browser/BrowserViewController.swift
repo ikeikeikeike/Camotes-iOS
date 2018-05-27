@@ -14,6 +14,8 @@ class BrowserViewController: UIViewController, WKNavigationDelegate, UITextField
     let useCase: BrowserUseCase! = Injector.ct.resolve(BrowserUseCase.self)
     
     let defaultURL = "https://google.com"
+   
+    var onceed = false
 
     @IBOutlet weak var browser: WKWebView!
     @IBOutlet weak var searchText: UITextField!
@@ -34,8 +36,7 @@ class BrowserViewController: UIViewController, WKNavigationDelegate, UITextField
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        loadURL()
+        if !onceed { loadURL() ;onceed = true }
     }
     
     override func didReceiveMemoryWarning() {
