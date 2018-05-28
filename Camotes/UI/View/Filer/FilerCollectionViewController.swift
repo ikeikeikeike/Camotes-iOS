@@ -78,6 +78,17 @@ class FilerCollectionViewController: UICollectionViewController {
 
         return cell
     }
+   
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+
+        let file = files[indexPath.row]
+        guard let url = URL(string: "compass://filer:\(file.site)") else {
+            return
+        }
+        
+        handleRoute(url, router: Routes.router)
+    }
 
     // MARK: UICollectionViewDelegate
 

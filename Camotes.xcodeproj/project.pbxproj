@@ -15,6 +15,8 @@
 		884209CE20B5D68100EB9CB2 /* FilerRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884209CD20B5D68100EB9CB2 /* FilerRepo.swift */; };
 		884209D020B6FE2C00EB9CB2 /* FilerEntityTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884209CF20B6FE2C00EB9CB2 /* FilerEntityTranslator.swift */; };
 		884209D220B722A600EB9CB2 /* FilerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884209D120B722A600EB9CB2 /* FilerUseCase.swift */; };
+		886E907B20BC483900946D0A /* Compass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 886E907A20BC483900946D0A /* Compass.framework */; };
+		886E907D20BC49E000946D0A /* FilerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886E907C20BC49E000946D0A /* FilerViewController.swift */; };
 		887C2C8720B019EB0026A1BC /* ScraperStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887C2C8620B019EB0026A1BC /* ScraperStore.swift */; };
 		887C2C8920B01AB50026A1BC /* ScraperEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887C2C8820B01AB50026A1BC /* ScraperEntity.swift */; };
 		887C2C8B20B01B4B0026A1BC /* RxMoya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887C2C8A20B01B4B0026A1BC /* RxMoya.framework */; };
@@ -75,6 +77,8 @@
 		884209CD20B5D68100EB9CB2 /* FilerRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilerRepo.swift; sourceTree = "<group>"; };
 		884209CF20B6FE2C00EB9CB2 /* FilerEntityTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilerEntityTranslator.swift; sourceTree = "<group>"; };
 		884209D120B722A600EB9CB2 /* FilerUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilerUseCase.swift; sourceTree = "<group>"; };
+		886E907A20BC483900946D0A /* Compass.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Compass.framework; path = Carthage/Build/iOS/Compass.framework; sourceTree = "<group>"; };
+		886E907C20BC49E000946D0A /* FilerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilerViewController.swift; sourceTree = "<group>"; };
 		887C2C8620B019EB0026A1BC /* ScraperStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScraperStore.swift; sourceTree = "<group>"; };
 		887C2C8820B01AB50026A1BC /* ScraperEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScraperEntity.swift; sourceTree = "<group>"; };
 		887C2C8A20B01B4B0026A1BC /* RxMoya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxMoya.framework; path = Carthage/Build/iOS/RxMoya.framework; sourceTree = "<group>"; };
@@ -120,6 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				886E907B20BC483900946D0A /* Compass.framework in Frameworks */,
 				884209C520B5BAFF00EB9CB2 /* RealmSwift.framework in Frameworks */,
 				884209C320B5BAF300EB9CB2 /* Realm.framework in Frameworks */,
 				887C2CAC20B350D10026A1BC /* SwinjectStoryboard.framework in Frameworks */,
@@ -162,8 +167,9 @@
 			isa = PBXGroup;
 			children = (
 				887C2C8F20B147A90026A1BC /* Filer.storyboard */,
-				887C2C9220B147E70026A1BC /* FilerCollectionViewController.swift */,
 				887C2C9420B14E6B0026A1BC /* FilerCollectionViewCell.swift */,
+				887C2C9220B147E70026A1BC /* FilerCollectionViewController.swift */,
+				886E907C20BC49E000946D0A /* FilerViewController.swift */,
 			);
 			path = Filer;
 			sourceTree = "<group>";
@@ -356,6 +362,7 @@
 		88BEC10220850C2800F84D89 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				886E907A20BC483900946D0A /* Compass.framework */,
 				884209C420B5BAFF00EB9CB2 /* RealmSwift.framework */,
 				884209C220B5BAF300EB9CB2 /* Realm.framework */,
 				887C2CAB20B350D10026A1BC /* SwinjectStoryboard.framework */,
@@ -515,6 +522,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/SwinjectStoryboard.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Compass.framework",
 			);
 			name = "Run Script";
 			outputPaths = (
@@ -551,6 +559,7 @@
 				884209CA20B5C11800EB9CB2 /* FilerObject.swift in Sources */,
 				887C2C9720B340D60026A1BC /* BrowserUseCase.swift in Sources */,
 				887C2C9C20B343980026A1BC /* Routes.swift in Sources */,
+				886E907D20BC49E000946D0A /* FilerViewController.swift in Sources */,
 				88BEC1012084FCC300F84D89 /* BrowserViewController.swift in Sources */,
 				88BEC0FB2084F30F00F84D89 /* RootTabBarController.swift in Sources */,
 			);

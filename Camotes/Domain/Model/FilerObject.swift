@@ -11,6 +11,7 @@ import RealmSwift
 
 public class FilerObject: DBObject {
     @objc dynamic var url          = ""
+    @objc dynamic var name         = ""
     @objc dynamic var site         = ""
     @objc dynamic var title        = ""
     @objc dynamic var thumb        = Data()

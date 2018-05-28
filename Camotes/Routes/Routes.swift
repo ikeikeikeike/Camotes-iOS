@@ -5,48 +5,67 @@
 //  Copyright © 2018 Tatsuo Ikeda. All rights reserved.
 //
 import UIKit
-//import Compass
+import Compass
 
 class Routes {
-//    static var router = Router()
+    static var router = Router()
     
     class func initialize() {
         setupRouter()
     }
     
     private class func setupRouter(){
-//        Navigator.scheme = "compass"
-//        Navigator.routes = [
-//            "aa:{title}",
+        Navigator.scheme = "compass"
+        Navigator.routes = [
+            "filer:{title}",
+            "filer-collection:{title}",
+
 //            "ab:{title}",
 //            "dupdater:{section}:{title}",
 //            "dpicker:{section}:{title}",
-//        ]
+        ]
         
-//        router.routes = [
-//            "aa:{title}": AARoute(),
+        router.routes = [
+            "filer:{title}": FilerRoute(),
+            "filer-collection:{title}": FilerCollectionRoute(),
 //            "ab:{title}": ABRoute(),
 //            "dupdater:{section}:{title}": DUpdaterRoute(),
 //            "dpicker:{section}:{title}": DPickerRoute(),
-//        ]
+        ]
     }
 }
 
-//struct AARoute: Routable {
-//    let vc = UIStoryboard(name: "AA", bundle: nil)
-//        .instantiateViewController(withIdentifier: "AAViewController")
-//
-//    func navigate(to location: Location, from currentController: CurrentController) throws {
-//        guard let title = location.arguments["title"] else {
-//            return
-//        }
-//
-//        vc.title = title
-//
-//        currentController.navigationController?.pushViewController(vc, animated: true)
-//    }
-//}
-//
+struct FilerRoute: Routable {
+    let vc = UIStoryboard(name: "Filer", bundle: nil)
+        .instantiateViewController(withIdentifier: "FilerViewController")
+
+    func navigate(to location: Location, from currentController: CurrentController) throws {
+        guard let title = location.arguments["title"] else {
+            return
+        }
+
+        vc.title = title
+
+        currentController.navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+struct FilerCollectionRoute: Routable {
+    let vc = UIStoryboard(name: "Filer", bundle: nil)
+        .instantiateViewController(withIdentifier: "FilerCollectionViewController")
+    
+    func navigate(to location: Location, from currentController: CurrentController) throws {
+        guard let title = location.arguments["title"] else {
+            return
+        }
+        
+        vc.title = title
+        
+        currentController.navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+
 //struct ABRoute: Routable {
 //    let vc = UIStoryboard(name: "AB", bundle: nil)
 //        .instantiateViewController(withIdentifier: "ABViewController")

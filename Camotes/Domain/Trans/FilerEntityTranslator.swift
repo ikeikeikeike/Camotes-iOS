@@ -18,7 +18,8 @@ internal struct FilerObjectTranslator: Translator {
 
         let data = FilerObject()
         data.url = model.webpageUrl
-        data.site = model.webpageBasename
+        data.name = model.webpageBasename
+        data.site = model.sitename()
         data.title = model.title
         data.duration = RealmOptional<Int>(duration)
         data.thumb = thumb
