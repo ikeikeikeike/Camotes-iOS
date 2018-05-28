@@ -17,16 +17,15 @@ class Routes {
     private class func setupRouter(){
         Navigator.scheme = "compass"
         Navigator.routes = [
-            "filer:{title}",
+            "filer:{id}",
             "filer-collection:{title}",
-
 //            "ab:{title}",
 //            "dupdater:{section}:{title}",
 //            "dpicker:{section}:{title}",
         ]
         
         router.routes = [
-            "filer:{title}": FilerRoute(),
+            "filer:{id}": FilerRoute(),
             "filer-collection:{title}": FilerCollectionRoute(),
 //            "ab:{title}": ABRoute(),
 //            "dupdater:{section}:{title}": DUpdaterRoute(),
@@ -40,11 +39,11 @@ struct FilerRoute: Routable {
         .instantiateViewController(withIdentifier: "FilerViewController")
 
     func navigate(to location: Location, from currentController: CurrentController) throws {
-        guard let title = location.arguments["title"] else {
+        guard let id = location.arguments["id"] else {
             return
         }
 
-        vc.title = title
+        vc.title = id
 
         currentController.navigationController?.pushViewController(vc, animated: true)
     }

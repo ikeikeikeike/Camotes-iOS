@@ -83,7 +83,7 @@ class FilerCollectionViewController: UICollectionViewController {
         collectionView.deselectItem(at: indexPath, animated: true)
 
         let file = files[indexPath.row]
-        guard let url = URL(string: "compass://filer:\(file.site)") else {
+        guard let url = URL(string: "compass://filer:\(file.id)") else {
             return
         }
         

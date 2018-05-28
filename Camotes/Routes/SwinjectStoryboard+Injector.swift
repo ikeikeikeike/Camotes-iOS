@@ -7,6 +7,7 @@ import SwinjectStoryboard
 extension SwinjectStoryboard {
     @objc class func setup() {
         Injector.initialize()
+        Routes.initialize()
         
 //        let ct = SwinjectStoryboard.defaultContainer
         

@@ -15,7 +15,7 @@ extension UIViewController {
     
     public func handleRoute(_ url: URL, router: Router)  {
         guard let location = Navigator.parse(url: url) else {
-            print("Location not found")
+            print("Location not found: \(url.absoluteURL)")
             return
         }
         

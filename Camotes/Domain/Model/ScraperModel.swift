@@ -3,6 +3,7 @@
 //  Created by Tatsuo Ikeda on 2018/02/19.
 //  Copyright © 2018 Tatsuo Ikeda. All rights reserved.
 //
+import UIKit
 
 public struct InfoModel {
     public let id:               String
@@ -28,28 +29,10 @@ public struct InfoModel {
     public let formats:          [InfoModel]?
     public let requestedFormats: [InfoModel]?
     
-    /*
-     (extractor, webpageUrl) match {
-         case (Some("generic"), Some(pageUrl)) =>
-             val uri = Uri.parse(pageUrl)
-             val (host, suffix) = (uri.host, uri.publicSuffix)
-     
-         suffix.flatMap(f => host.map(_.replace(s".${f}", "")))
-              .map(f => f.split('.').last).getOrElse("")
-     
-         case (Some(text), _) =>
-            text.toLowerCase
-     
-         case _ =>
-            ""
-     }
-
-     */
     func sitename() -> String {
         switch (extractor, webpageUrl) {
-        case (.some("generic"), let url):
-            url
-            return "default"
+        case (.some("generic"), _):
+            return URL(string: webpageUrl)?.host ?? "generic"
         case (.some(let site), _):
             return site.lowercased()
         default:
