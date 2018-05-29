@@ -94,6 +94,14 @@
             </objects>
             <point key="canvasLocation" x="3454" y="155"/>
         </scene>
+        <!--AV Player View Controller-->
+        <scene sceneID="24u-dO-Gs5">
+            <objects>
+                <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="29S-SO-IIG" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n3V-Oq-JRi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4226" y="155"/>
+        </scene>
         <!--Item-->
         <scene sceneID="5iX-FE-S7H">
             <objects>

@@ -17,6 +17,7 @@
 		884209D220B722A600EB9CB2 /* FilerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884209D120B722A600EB9CB2 /* FilerUseCase.swift */; };
 		886E907B20BC483900946D0A /* Compass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 886E907A20BC483900946D0A /* Compass.framework */; };
 		886E907D20BC49E000946D0A /* FilerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886E907C20BC49E000946D0A /* FilerViewController.swift */; };
+		886E908120BD997400946D0A /* CachingPlayerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886E908020BD997400946D0A /* CachingPlayerItem.swift */; };
 		887C2C8720B019EB0026A1BC /* ScraperStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887C2C8620B019EB0026A1BC /* ScraperStore.swift */; };
 		887C2C8920B01AB50026A1BC /* ScraperEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887C2C8820B01AB50026A1BC /* ScraperEntity.swift */; };
 		887C2C8B20B01B4B0026A1BC /* RxMoya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887C2C8A20B01B4B0026A1BC /* RxMoya.framework */; };
@@ -79,6 +80,8 @@
 		884209D120B722A600EB9CB2 /* FilerUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilerUseCase.swift; sourceTree = "<group>"; };
 		886E907A20BC483900946D0A /* Compass.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Compass.framework; path = Carthage/Build/iOS/Compass.framework; sourceTree = "<group>"; };
 		886E907C20BC49E000946D0A /* FilerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilerViewController.swift; sourceTree = "<group>"; };
+		886E907E20BD849B00946D0A /* Player.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Player.framework; path = Carthage/Build/iOS/Player.framework; sourceTree = "<group>"; };
+		886E908020BD997400946D0A /* CachingPlayerItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachingPlayerItem.swift; sourceTree = "<group>"; };
 		887C2C8620B019EB0026A1BC /* ScraperStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScraperStore.swift; sourceTree = "<group>"; };
 		887C2C8820B01AB50026A1BC /* ScraperEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScraperEntity.swift; sourceTree = "<group>"; };
 		887C2C8A20B01B4B0026A1BC /* RxMoya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxMoya.framework; path = Carthage/Build/iOS/RxMoya.framework; sourceTree = "<group>"; };
@@ -170,6 +173,7 @@
 				887C2C9420B14E6B0026A1BC /* FilerCollectionViewCell.swift */,
 				887C2C9220B147E70026A1BC /* FilerCollectionViewController.swift */,
 				886E907C20BC49E000946D0A /* FilerViewController.swift */,
+				886E908020BD997400946D0A /* CachingPlayerItem.swift */,
 			);
 			path = Filer;
 			sourceTree = "<group>";
@@ -362,6 +366,7 @@
 		88BEC10220850C2800F84D89 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				886E907E20BD849B00946D0A /* Player.framework */,
 				886E907A20BC483900946D0A /* Compass.framework */,
 				884209C420B5BAFF00EB9CB2 /* RealmSwift.framework */,
 				884209C220B5BAF300EB9CB2 /* Realm.framework */,
@@ -548,6 +553,7 @@
 				887C2C8920B01AB50026A1BC /* ScraperEntity.swift in Sources */,
 				887C2CA620B345E40026A1BC /* Translator.swift in Sources */,
 				887C2C9E20B344670026A1BC /* SwinjectStoryboard+Injector.swift in Sources */,
+				886E908120BD997400946D0A /* CachingPlayerItem.swift in Sources */,
 				887C2CA020B344950026A1BC /* Swinject+Injector.swift in Sources */,
 				887C2C8720B019EB0026A1BC /* ScraperStore.swift in Sources */,
 				887C2CA820B3464C0026A1BC /* ScraperModelTranslator.swift in Sources */,
