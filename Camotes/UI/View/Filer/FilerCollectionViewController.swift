@@ -87,7 +87,7 @@ class FilerCollectionViewController: UICollectionViewController {
             return
         }
         
-        handleRoute(url, router: Routes.router)
+        handleRoute(url, router: Routes.router)       
     }
 
     // MARK: UICollectionViewDelegate

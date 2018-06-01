@@ -9,7 +9,7 @@ import Foundation
 import RealmSwift
 
 protocol FilerStore {
-    func get(id: String) -> FilerObject?
+    func find(id: String) -> FilerObject?
     func all() -> Results<FilerObject>
     func save(data: FilerObject) -> Bool
     func delete(data: FilerObject) -> Bool

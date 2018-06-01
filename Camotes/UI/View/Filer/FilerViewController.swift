@@ -16,20 +16,38 @@ let unko = "http://localhost:8000/api/stream/aHR0cHM6Ly93d3cueHZpZGVvcy5jb20vdml
 
 class FilerViewController: UIViewController {
     
+    let useCase: FilerUseCase! = Injector.ct.resolve(FilerUseCase.self)
     var player: AVPlayer!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)       
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    @IBAction func play(_ sender: Any) {
+        guard let id = title else {
+            return showAlert("player failed")
+        }
+        
+        let av = useCase.find(id: id)
+        self.title = av?.title
         
         guard let url = URL(string: unko) else {
-            return
+            return showAlert("player failed")
         }
         
         // Create an AVPlayer, passing it the HTTP Live Streaming URL.
-//        let asset = AVURLAsset(url: url)
+        //        let asset = AVURLAsset(url: url)
         let item = CachingPlayerItem(url: url)
         item.delegate = self
-
+        
         player = AVPlayer(playerItem: item)
         player.automaticallyWaitsToMinimizeStalling = false
         
@@ -42,27 +60,6 @@ class FilerViewController: UIViewController {
             self.player.playImmediately(atRate: 1.0)
         }
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension FilerViewController: CachingPlayerItemDelegate {
@@ -83,5 +80,4 @@ extension FilerViewController: CachingPlayerItemDelegate {
     func playerItem(_ playerItem: CachingPlayerItem, downloadingFailedWith error: Error) {
         print(error)
     }
-    
 }

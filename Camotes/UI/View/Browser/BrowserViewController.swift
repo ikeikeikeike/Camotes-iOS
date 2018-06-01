@@ -60,15 +60,6 @@ class BrowserViewController: UIViewController, WKNavigationDelegate, UITextField
         return true
     }
 
-    func showAlert(_ message: String) {
-        let sheet = UIAlertController(title: message, message: nil, preferredStyle: .alert)
-        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
-        sheet.addAction(action)
-        
-        present(sheet, animated: true, completion: nil)
-    }
-
-
 }
 
 extension String {

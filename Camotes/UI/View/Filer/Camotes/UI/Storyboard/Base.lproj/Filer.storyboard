@@ -85,6 +85,16 @@
                     <view key="view" contentMode="scaleToFill" id="Xcg-sK-G03">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ad-mg-ulE">
+                                <rect key="frame" x="172" y="318" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Play"/>
+                                <connections>
+                                    <action selector="play:" destination="nhO-b9-NTI" eventType="touchUpInside" id="57a-rf-fA4"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="9Kr-9F-rK7"/>
                     </view>
@@ -93,14 +103,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tmN-ge-oqU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3454" y="155"/>
-        </scene>
-        <!--AV Player View Controller-->
-        <scene sceneID="24u-dO-Gs5">
-            <objects>
-                <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="29S-SO-IIG" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="n3V-Oq-JRi" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4226" y="155"/>
         </scene>
         <!--Item-->
         <scene sceneID="5iX-FE-S7H">

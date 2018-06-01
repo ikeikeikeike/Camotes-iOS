@@ -9,7 +9,7 @@ import Foundation
 import RealmSwift
 
 public protocol FilerRepo {
-    func get(id: String) -> FilerObject?
+    func find(id: String) -> FilerObject?
     func all() -> Results<FilerObject>
     func save(data: FilerObject) -> Bool
     func delete(data: FilerObject) -> Bool
@@ -18,8 +18,8 @@ public protocol FilerRepo {
 public struct FilerRepoImpl: FilerRepo {
     fileprivate let store: FilerStore! = Injector.ct.resolve(FilerStore.self)
     
-    public func get(id: String) -> FilerObject? {
-        return store.get(id: id)
+    public func find(id: String) -> FilerObject? {
+        return store.find(id: id)
     }
     
     public func all() -> Results<FilerObject> {

@@ -9,6 +9,7 @@
 import RealmSwift
 
 public protocol FilerUseCase {
+    func find(id: String) -> FilerObject?
     func files() -> Results<FilerObject>
 }
 
@@ -16,6 +17,10 @@ public struct FilerUseCaseImpl: FilerUseCase {
     
     fileprivate let filerRepo: FilerRepo! = Injector.ct.resolve(FilerRepo.self)
     
+    public func find(id: String) -> FilerObject? {
+        return filerRepo.find(id: id)
+    }
+
     public func files() -> Results<FilerObject> {
         return filerRepo.all()
     }

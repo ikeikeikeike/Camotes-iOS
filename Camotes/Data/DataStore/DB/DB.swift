@@ -22,7 +22,7 @@ public class DBObject: Object {
 class DBBase<DBType: DBObject> {
     let realm = try! Realm()
     
-    public func get(id: String) -> DBType? {
+    public func find(id: String) -> DBType? {
         return realm.objects(DBType.self).filter("id == '\(id)'").first
     }
     
@@ -31,7 +31,7 @@ class DBBase<DBType: DBObject> {
     }
 
     public func save(data: DBType) -> Bool {
-        return get(id: data.id) == nil ? create(data: data) : update(data: data)
+        return find(id: data.id) == nil ? create(data: data) : update(data: data)
     }
     
     public func create(data: DBType) -> Bool {
