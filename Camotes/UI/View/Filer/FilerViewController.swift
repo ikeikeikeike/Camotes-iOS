@@ -32,12 +32,12 @@ class FilerViewController: UIViewController {
     }
     
     @IBAction func play(_ sender: Any) {
-        guard let id = title else {
-            return showAlert("player failed")
-        }
+//        guard let id = title else {
+//            return showAlert("player failed")
+//        }
         
-        let av = useCase.find(id: id)
-        self.title = av?.title
+//        let av = useCase.find(id: id)
+//        self.title = av?.title
         
         guard let url = URL(string: unko) else {
             return showAlert("player failed")

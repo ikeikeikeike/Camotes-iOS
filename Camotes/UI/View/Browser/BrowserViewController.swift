@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class BrowserViewController: UIViewController, WKNavigationDelegate, UITextFieldDelegate {
+class BrowserViewController: UIViewController, UITextFieldDelegate {
     
     let useCase: BrowserUseCase! = Injector.ct.resolve(BrowserUseCase.self)
     
@@ -20,6 +20,7 @@ class BrowserViewController: UIViewController, WKNavigationDelegate, UITextField
     @IBOutlet weak var browser: WKWebView!
     @IBOutlet weak var searchText: UITextField!
     
+    @IBOutlet weak var browserToolbar: UIToolbar!
     @IBOutlet weak var backButton: UIBarButtonItem!
     @IBOutlet weak var forwardButton: UIBarButtonItem!
     @IBOutlet weak var reloadButton: UIBarButtonItem!
@@ -32,12 +33,21 @@ class BrowserViewController: UIViewController, WKNavigationDelegate, UITextField
         
         searchText.delegate = self
         browser.navigationDelegate = self
+        browser.scrollView.delegate = self
+        
+        if let tabBar = tabBarController?.tabBar {
+            browserToolbar.heightAnchor.constraint(equalToConstant: tabBar.frame.height).isActive = true
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if !onceed { loadURL() ;onceed = true }
     }
+    
+//    override func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(animated)
+//    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -60,12 +70,6 @@ class BrowserViewController: UIViewController, WKNavigationDelegate, UITextField
         return true
     }
 
-}
-
-extension String {
-    func quote() -> String {
-        return addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
-    }
 }
 
 extension BrowserViewController {
@@ -151,7 +155,7 @@ extension BrowserViewController {
     }
 }
 
-extension BrowserViewController {
+extension BrowserViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
         
     }
@@ -186,5 +190,40 @@ extension BrowserViewController {
         if let url = browser.url {
             searchText.text = url.absoluteString
         }
+    }
+}
+
+extension BrowserViewController: UIScrollViewDelegate {
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        if scrollView.panGestureRecognizer.translation(in: scrollView).y < 0{
+            changeTabBar(hidden: true, animated: true)
+        } else {
+            changeTabBar(hidden: false, animated: true)
+        }
+    }
+    
+    func changeTabBar(hidden: Bool, animated: Bool) {
+        guard let toolBar = browserToolbar else { return }
+        guard let tabBar = tabBarController?.tabBar else { return }
+        if tabBar.isHidden == hidden { return }
+        
+        let frame = tabBar.frame
+        let offset = hidden ? frame.size.height : -frame.size.height
+        let duration: TimeInterval = (animated ? 0.5 : 0.0)
+    
+        tabBar.isHidden = false
+        toolBar.isHidden = true
+        
+        UIView.animate(withDuration: duration, animations: {
+            tabBar.frame = frame.offsetBy(dx: 0, dy: offset)
+        }, completion: { (true) in
+            tabBar.isHidden = hidden
+            toolBar.isHidden = !hidden
+        })
+    }
+    
+    func tabBarIsVisible() -> Bool {
+        return tabBarController!.tabBar.frame.origin.y < view.frame.maxY
     }
 }

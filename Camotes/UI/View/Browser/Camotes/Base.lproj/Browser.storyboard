@@ -18,15 +18,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UDL-Eo-wJU">
-                                <rect key="frame" x="0.0" y="574" width="375" height="44"/>
+                            <toolbar hidden="YES" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UDL-Eo-wJU">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
-                                    <barButtonItem title="←" id="3Nd-np-pvo">
+                                    <barButtonItem systemItem="rewind" id="3Nd-np-pvo">
                                         <connections>
                                             <action selector="goBack:" destination="BYZ-38-t0r" id="ZwK-V9-OnF"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="→" id="P7f-0y-oFY">
+                                    <barButtonItem systemItem="fastForward" id="P7f-0y-oFY">
                                         <connections>
                                             <action selector="goFoward:" destination="BYZ-38-t0r" id="8rM-Uw-ZcW"/>
                                         </connections>
@@ -45,8 +45,8 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yDt-fm-5mx">
-                                <rect key="frame" x="0.0" y="64" width="375" height="510"/>
+                            <wkWebView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yDt-fm-5mx">
+                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -56,13 +56,13 @@
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="UDL-Eo-wJU" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="4GK-kK-adg"/>
-                            <constraint firstItem="yDt-fm-5mx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4GV-Ta-iMR"/>
-                            <constraint firstItem="UDL-Eo-wJU" firstAttribute="top" secondItem="yDt-fm-5mx" secondAttribute="bottom" id="B4p-8r-Lei"/>
-                            <constraint firstItem="yDt-fm-5mx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Cuj-UR-zIS"/>
-                            <constraint firstItem="UDL-Eo-wJU" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="MiU-Vd-b4E"/>
-                            <constraint firstItem="UDL-Eo-wJU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="deD-BU-Jqu"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yDt-fm-5mx" secondAttribute="trailing" id="ncU-Bt-wQJ"/>
+                            <constraint firstItem="yDt-fm-5mx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="634-gQ-Mzg"/>
+                            <constraint firstItem="UDL-Eo-wJU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="9Ip-6R-pxa"/>
+                            <constraint firstItem="yDt-fm-5mx" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="D1F-l2-WOP"/>
+                            <constraint firstAttribute="trailing" secondItem="UDL-Eo-wJU" secondAttribute="trailing" id="Mh6-Cv-NGH"/>
+                            <constraint firstAttribute="bottom" secondItem="UDL-Eo-wJU" secondAttribute="bottom" id="Xs8-7x-ZBb"/>
+                            <constraint firstItem="yDt-fm-5mx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="oLb-Ow-Yqi"/>
+                            <constraint firstItem="yDt-fm-5mx" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="qyF-sE-1TK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -76,10 +76,11 @@
                             <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="URL" returnKeyType="google" enablesReturnKeyAutomatically="YES"/>
                         </textField>
                     </navigationItem>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="backButton" destination="3Nd-np-pvo" id="23d-1N-J7C"/>
                         <outlet property="browser" destination="yDt-fm-5mx" id="oIH-0f-I9b"/>
+                        <outlet property="browserToolbar" destination="UDL-Eo-wJU" id="vR1-Zp-zSh"/>
                         <outlet property="forwardButton" destination="P7f-0y-oFY" id="AR8-LV-QNX"/>
                         <outlet property="reloadButton" destination="MxA-N7-vsa" id="7ex-uy-sKl"/>
                         <outlet property="searchText" destination="3sO-Kh-N87" id="sVM-zM-Fpl"/>
