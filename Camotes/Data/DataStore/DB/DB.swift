@@ -27,7 +27,7 @@ class DBBase<DBType: DBObject> {
     }
     
     public func all() -> Results<DBType> {
-        return realm.objects(DBType.self)  
+        return realm.objects(DBType.self)
     }
 
     public func save(data: DBType) -> Bool {

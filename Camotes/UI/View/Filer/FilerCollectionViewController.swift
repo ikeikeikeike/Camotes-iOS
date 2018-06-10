@@ -89,6 +89,21 @@ class FilerCollectionViewController: UICollectionViewController {
         
         handleRoute(url, router: Routes.router)       
     }
+    
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "FilerCollectionSectionHeader", for: indexPath) as? FilerCollectionSectionHeader else {
+            fatalError("Could not find proper header")
+        }
+        
+        if kind == UICollectionElementKindSectionHeader {
+//            header.sectionLabel.text = "section \(indexPath.section)"
+            return header
+        }
+        
+        return UICollectionReusableView()
+    }
+    
 
     // MARK: UICollectionViewDelegate
 

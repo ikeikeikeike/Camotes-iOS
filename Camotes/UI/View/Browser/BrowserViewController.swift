@@ -45,9 +45,9 @@ class BrowserViewController: UIViewController, UITextFieldDelegate {
         if !onceed { loadURL() ;onceed = true }
     }
     
-//    override func viewWillDisappear(_ animated: Bool) {
-//        super.viewWillDisappear(animated)
-//    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

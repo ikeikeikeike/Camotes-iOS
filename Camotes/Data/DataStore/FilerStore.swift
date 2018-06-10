@@ -15,4 +15,8 @@ protocol FilerStore {
     func delete(data: FilerObject) -> Bool
 }
 
-class FilerStoreImpl: DBBase<FilerObject>, FilerStore {}
+class FilerStoreImpl: DBBase<FilerObject>, FilerStore {
+    override func all() -> Results<FilerObject> {
+        return super.all().sorted(byKeyPath: "date", ascending: false)
+    }
+}

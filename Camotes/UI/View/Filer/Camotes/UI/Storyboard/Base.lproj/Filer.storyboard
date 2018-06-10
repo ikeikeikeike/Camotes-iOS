@@ -21,13 +21,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Zs0-2q-SBT">
                             <size key="itemSize" width="134" height="126"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="headerReferenceSize" width="50" height="50"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="FilerCollectionViewCell" reuseIdentifier="FilerCollectionViewCell" id="Fnb-cA-Oki" customClass="FilerCollectionViewCell" customModule="Camotes" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="134" height="126"/>
+                                <rect key="frame" x="0.0" y="50" width="134" height="126"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                     <rect key="frame" x="0.0" y="0.0" width="134" height="126"/>
@@ -64,6 +64,25 @@
                                 </connections>
                             </collectionViewCell>
                         </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="FilerCollectionSectionHeader" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="FilerCollectionSectionHeader" id="Ngg-ir-QnY" customClass="FilerCollectionSectionHeader" customModule="Camotes" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <searchBar contentMode="redraw" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="CYl-ee-Eze">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="CYl-ee-Eze" firstAttribute="leading" secondItem="Ngg-ir-QnY" secondAttribute="leading" id="BPD-qU-2W3"/>
+                                <constraint firstItem="CYl-ee-Eze" firstAttribute="top" secondItem="Ngg-ir-QnY" secondAttribute="top" id="adX-Bm-4Sz"/>
+                                <constraint firstAttribute="bottom" secondItem="CYl-ee-Eze" secondAttribute="bottom" id="iZu-Pj-KR1"/>
+                                <constraint firstAttribute="trailing" secondItem="CYl-ee-Eze" secondAttribute="trailing" id="yMX-Yv-3VT"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="search" destination="CYl-ee-Eze" id="zR7-6u-JwA"/>
+                            </connections>
+                        </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="E4u-ic-gNd" id="KSQ-Xf-OUm"/>
                             <outlet property="delegate" destination="E4u-ic-gNd" id="xQq-uw-IQx"/>

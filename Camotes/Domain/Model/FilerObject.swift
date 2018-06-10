@@ -15,7 +15,14 @@ public class FilerObject: DBObject {
     @objc dynamic var site         = ""
     @objc dynamic var title        = ""
     @objc dynamic var thumb        = Data()
+    @objc dynamic var date         = Date()
     var duration                   = RealmOptional<Int>()
+
 //    let likes                      = RealmOptional<Int>()
 //    let views                      = RealmOptional<Int>()
+    
+    override public static func indexedProperties() -> [String] {
+        return ["title", "site", "date", "duration"]
+    }
+
 }
