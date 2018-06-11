@@ -28,7 +28,6 @@ class FilerCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         
         // Objects
-        
         files = useCase.files()
         notifyToken = files.observe { [weak self] (changes: RealmCollectionChange) in
             guard let cview = self?.collectionView else { return }
@@ -47,12 +46,8 @@ class FilerCollectionViewController: UICollectionViewController {
                 fatalError("\(error)")
             }
         }
-        
-        // Searching
 
-        //        resultsTableController = ResultsTableController()
-        //        resultsTableController.tableView.delegate = self
-        
+        // Searching
         searcher = UISearchController(searchResultsController: nil)
         searcher.searchResultsUpdater = self
         searcher.searchBar.autocapitalizationType = .none
@@ -68,7 +63,7 @@ class FilerCollectionViewController: UICollectionViewController {
         
         definesPresentationContext = true
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -147,7 +142,7 @@ extension FilerCollectionViewController: UISearchResultsUpdating {
         
         files = useCase.files()
         if !text.isEmpty {
-            files = files.filter("title CONTAINS %@ OR site BEGINSWITH %@", text, text)
+            files = files.filter("title CONTAINS[cd] %@ OR site BEGINSWITH[cd] %@", text, text)
         }
         
         cview.reloadData()
