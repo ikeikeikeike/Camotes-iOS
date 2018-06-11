@@ -38,7 +38,6 @@
 		887C2CA820B3464C0026A1BC /* ScraperModelTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887C2CA720B3464C0026A1BC /* ScraperModelTranslator.swift */; };
 		887C2CAA20B350C10026A1BC /* Swinject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887C2CA920B350C10026A1BC /* Swinject.framework */; };
 		887C2CAC20B350D10026A1BC /* SwinjectStoryboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887C2CAB20B350D10026A1BC /* SwinjectStoryboard.framework */; };
-		887D69A420CD85BC00BC1BDD /* FilerCollectionSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887D69A320CD85BC00BC1BDD /* FilerCollectionSectionHeader.swift */; };
 		88AB39FD20B00A830061DCF0 /* ScraperAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AB39FC20B00A830061DCF0 /* ScraperAPI.swift */; };
 		88AB39FF20B00B540061DCF0 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88AB39FE20B00B540061DCF0 /* Alamofire.framework */; };
 		88AB3A0120B00B670061DCF0 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88AB3A0020B00B670061DCF0 /* Result.framework */; };
@@ -105,7 +104,6 @@
 		887C2CA720B3464C0026A1BC /* ScraperModelTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScraperModelTranslator.swift; sourceTree = "<group>"; };
 		887C2CA920B350C10026A1BC /* Swinject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swinject.framework; path = Carthage/Build/iOS/Swinject.framework; sourceTree = "<group>"; };
 		887C2CAB20B350D10026A1BC /* SwinjectStoryboard.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwinjectStoryboard.framework; path = Carthage/Build/iOS/SwinjectStoryboard.framework; sourceTree = "<group>"; };
-		887D69A320CD85BC00BC1BDD /* FilerCollectionSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilerCollectionSectionHeader.swift; sourceTree = "<group>"; };
 		88AB39FC20B00A830061DCF0 /* ScraperAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScraperAPI.swift; sourceTree = "<group>"; };
 		88AB39FE20B00B540061DCF0 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		88AB3A0020B00B670061DCF0 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
@@ -186,7 +184,6 @@
 				887C2C8F20B147A90026A1BC /* Filer.storyboard */,
 				887C2C9420B14E6B0026A1BC /* FilerCollectionViewCell.swift */,
 				887C2C9220B147E70026A1BC /* FilerCollectionViewController.swift */,
-				887D69A320CD85BC00BC1BDD /* FilerCollectionSectionHeader.swift */,
 				886E907C20BC49E000946D0A /* FilerViewController.swift */,
 				886E908020BD997400946D0A /* CachingPlayerItem.swift */,
 			);
@@ -573,7 +570,6 @@
 				887C2CA620B345E40026A1BC /* Translator.swift in Sources */,
 				887C2C9E20B344670026A1BC /* SwinjectStoryboard+Injector.swift in Sources */,
 				886E908120BD997400946D0A /* CachingPlayerItem.swift in Sources */,
-				887D69A420CD85BC00BC1BDD /* FilerCollectionSectionHeader.swift in Sources */,
 				887C2CA020B344950026A1BC /* Swinject+Injector.swift in Sources */,
 				887C2C8720B019EB0026A1BC /* ScraperStore.swift in Sources */,
 				887C2CA820B3464C0026A1BC /* ScraperModelTranslator.swift in Sources */,

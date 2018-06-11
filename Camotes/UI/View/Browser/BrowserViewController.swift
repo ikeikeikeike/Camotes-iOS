@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class BrowserViewController: UIViewController, UITextFieldDelegate {
+class BrowserViewController: UIViewController {
     
     let useCase: BrowserUseCase! = Injector.ct.resolve(BrowserUseCase.self)
     
@@ -53,6 +53,10 @@ class BrowserViewController: UIViewController, UITextFieldDelegate {
         super.didReceiveMemoryWarning()
     }
     
+
+}
+
+extension BrowserViewController: UITextFieldDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if (searchText.isFirstResponder) {
             searchText.resignFirstResponder() // hide keyboard
@@ -69,7 +73,6 @@ class BrowserViewController: UIViewController, UITextFieldDelegate {
         
         return true
     }
-
 }
 
 extension BrowserViewController {

@@ -64,24 +64,9 @@
                                 </connections>
                             </collectionViewCell>
                         </cells>
-                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="FilerCollectionSectionHeader" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="FilerCollectionSectionHeader" id="Ngg-ir-QnY" customClass="FilerCollectionSectionHeader" customModule="Camotes" customModuleProvider="target">
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="FilerCollectionSectionHeader" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="FilerCollectionSectionHeader" id="Ngg-ir-QnY">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                             <autoresizingMask key="autoresizingMask"/>
-                            <subviews>
-                                <searchBar contentMode="redraw" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="CYl-ee-Eze">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
-                                    <textInputTraits key="textInputTraits"/>
-                                </searchBar>
-                            </subviews>
-                            <constraints>
-                                <constraint firstItem="CYl-ee-Eze" firstAttribute="leading" secondItem="Ngg-ir-QnY" secondAttribute="leading" id="BPD-qU-2W3"/>
-                                <constraint firstItem="CYl-ee-Eze" firstAttribute="top" secondItem="Ngg-ir-QnY" secondAttribute="top" id="adX-Bm-4Sz"/>
-                                <constraint firstAttribute="bottom" secondItem="CYl-ee-Eze" secondAttribute="bottom" id="iZu-Pj-KR1"/>
-                                <constraint firstAttribute="trailing" secondItem="CYl-ee-Eze" secondAttribute="trailing" id="yMX-Yv-3VT"/>
-                            </constraints>
-                            <connections>
-                                <outlet property="search" destination="CYl-ee-Eze" id="zR7-6u-JwA"/>
-                            </connections>
                         </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="E4u-ic-gNd" id="KSQ-Xf-OUm"/>

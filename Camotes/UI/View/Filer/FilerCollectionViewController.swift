@@ -14,16 +14,36 @@ private let reuseID = "FilerCollectionViewCell"
 class FilerCollectionViewController: UICollectionViewController {
     
     let useCase: FilerUseCase! = Injector.ct.resolve(FilerUseCase.self)
+    
     var files: Results<FilerObject>!
     var notifyToken: NotificationToken? = nil
-   
+    
+    var searcher: UISearchController!
+
     deinit {
         notifyToken?.invalidate()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
+//        resultsTableController = ResultsTableController()
+//        resultsTableController.tableView.delegate = self
+        
+        searcher = UISearchController(searchResultsController: nil)
+        searcher.searchResultsUpdater = self
+        searcher.searchBar.sizeToFit()
+        
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.searchController = searcher
+        navigationItem.hidesSearchBarWhenScrolling = false
+        
+        searcher.delegate = self
+        searcher.dimsBackgroundDuringPresentation = false // default is YES
+        searcher.searchBar.delegate = self    // so we can monitor text changes + others
+        
+        definesPresentationContext = true
+        
         files = useCase.files()
         notifyToken = files.observe { [weak self] (changes: RealmCollectionChange) in
             guard let cview = self?.collectionView else { return }
@@ -48,18 +68,6 @@ class FilerCollectionViewController: UICollectionViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-    // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -90,53 +98,6 @@ class FilerCollectionViewController: UICollectionViewController {
         handleRoute(url, router: Routes.router)       
     }
     
-    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        
-        guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "FilerCollectionSectionHeader", for: indexPath) as? FilerCollectionSectionHeader else {
-            fatalError("Could not find proper header")
-        }
-        
-        if kind == UICollectionElementKindSectionHeader {
-//            header.sectionLabel.text = "section \(indexPath.section)"
-            return header
-        }
-        
-        return UICollectionReusableView()
-    }
-    
-
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-    
-    }
-    */
-
-
 }
 
 extension FilerCollectionViewController: UICollectionViewDelegateFlowLayout {
@@ -146,3 +107,42 @@ extension FilerCollectionViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
+extension FilerCollectionViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
+}
+
+extension FilerCollectionViewController: UISearchControllerDelegate {
+    func presentSearchController(_ searchController: UISearchController) {
+        //debugPrint("UISearchControllerDelegate invoked method: \(__FUNCTION__).")
+    }
+    
+    func willPresentSearchController(_ searchController: UISearchController) {
+        //debugPrint("UISearchControllerDelegate invoked method: \(__FUNCTION__).")
+    }
+    
+    func didPresentSearchController(_ searchController: UISearchController) {
+        //debugPrint("UISearchControllerDelegate invoked method: \(__FUNCTION__).")
+    }
+    
+    func willDismissSearchController(_ searchController: UISearchController) {
+        //debugPrint("UISearchControllerDelegate invoked method: \(__FUNCTION__).")
+    }
+    
+    func didDismissSearchController(_ searchController: UISearchController) {
+        //debugPrint("UISearchControllerDelegate invoked method: \(__FUNCTION__).")
+    }
+}
+
+
+
+extension FilerCollectionViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        if let text = searcher.searchBar.text {
+            print(text)
+//            filteredItems = MasterViewController().data.filter{$0.localizedCaseInsensitiveContains(text)}
+//            self.collectionView?.reloadData()
+        }
+    }
+}
