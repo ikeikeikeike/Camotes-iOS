@@ -27,22 +27,7 @@ class FilerCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        resultsTableController = ResultsTableController()
-//        resultsTableController.tableView.delegate = self
-        
-        searcher = UISearchController(searchResultsController: nil)
-        searcher.searchResultsUpdater = self
-        searcher.searchBar.sizeToFit()
-        
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.searchController = searcher
-        navigationItem.hidesSearchBarWhenScrolling = false
-        
-        searcher.delegate = self
-        searcher.dimsBackgroundDuringPresentation = false // default is YES
-        searcher.searchBar.delegate = self    // so we can monitor text changes + others
-        
-        definesPresentationContext = true
+        // Objects
         
         files = useCase.files()
         notifyToken = files.observe { [weak self] (changes: RealmCollectionChange) in
@@ -62,7 +47,26 @@ class FilerCollectionViewController: UICollectionViewController {
                 fatalError("\(error)")
             }
         }
+        
+        // Searching
 
+        //        resultsTableController = ResultsTableController()
+        //        resultsTableController.tableView.delegate = self
+        
+        searcher = UISearchController(searchResultsController: nil)
+        searcher.searchResultsUpdater = self
+        searcher.searchBar.autocapitalizationType = .none
+        searcher.searchBar.sizeToFit()
+        
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.searchController = searcher
+        navigationItem.hidesSearchBarWhenScrolling = false
+        
+        searcher.delegate = self
+        searcher.dimsBackgroundDuringPresentation = false // default is YES
+        searcher.searchBar.delegate = self    // so we can monitor text changes + others
+        
+        definesPresentationContext = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -136,13 +140,16 @@ extension FilerCollectionViewController: UISearchControllerDelegate {
 }
 
 
-
 extension FilerCollectionViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        if let text = searcher.searchBar.text {
-            print(text)
-//            filteredItems = MasterViewController().data.filter{$0.localizedCaseInsensitiveContains(text)}
-//            self.collectionView?.reloadData()
+        guard let cview = collectionView else { return }
+        guard let text = searcher.searchBar.text else { return }
+        
+        files = useCase.files()
+        if !text.isEmpty {
+            files = files.filter("title CONTAINS %@ OR site BEGINSWITH %@", text, text)
         }
+        
+        cview.reloadData()
     }
 }
