@@ -21,13 +21,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Zs0-2q-SBT">
                             <size key="itemSize" width="134" height="126"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="headerReferenceSize" width="50" height="50"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="FilerCollectionViewCell" reuseIdentifier="FilerCollectionViewCell" id="Fnb-cA-Oki" customClass="FilerCollectionViewCell" customModule="Camotes" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="134" height="126"/>
+                                <rect key="frame" x="0.0" y="50" width="134" height="126"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                     <rect key="frame" x="0.0" y="0.0" width="134" height="126"/>
@@ -64,6 +64,36 @@
                                 </connections>
                             </collectionViewCell>
                         </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="FilerCollectionReusableView" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="FilerCollectionReusableView" id="g6A-8T-SLK" customClass="FilerCollectionReusableView" customModule="Camotes" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lBD-e4-BZM">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                    <items>
+                                        <barButtonItem width="42" systemItem="fixedSpace" id="8Ha-rM-hMp"/>
+                                        <barButtonItem systemItem="flexibleSpace" id="DSh-2a-x3J"/>
+                                        <barButtonItem title="Sorted by Date ▼" id="zSd-1S-Yyn">
+                                            <connections>
+                                                <action selector="sortby:" destination="E4u-ic-gNd" id="aEq-Zi-hTa"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem systemItem="flexibleSpace" id="WBY-hZ-PsI"/>
+                                        <barButtonItem width="42" systemItem="fixedSpace" id="bDE-YN-XLk"/>
+                                    </items>
+                                </toolbar>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="lBD-e4-BZM" firstAttribute="leading" secondItem="g6A-8T-SLK" secondAttribute="leading" id="9Ka-Ie-pTo"/>
+                                <constraint firstAttribute="bottom" secondItem="lBD-e4-BZM" secondAttribute="bottom" id="TRz-IJ-Rso"/>
+                                <constraint firstAttribute="trailing" secondItem="lBD-e4-BZM" secondAttribute="trailing" id="hDu-hH-OTn"/>
+                                <constraint firstItem="lBD-e4-BZM" firstAttribute="top" secondItem="g6A-8T-SLK" secondAttribute="top" id="yXB-Fp-ScE"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="sortby" destination="zSd-1S-Yyn" id="m4o-9O-jqE"/>
+                                <outlet property="toolbar" destination="lBD-e4-BZM" id="Uq1-ee-d0R"/>
+                            </connections>
+                        </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="E4u-ic-gNd" id="KSQ-Xf-OUm"/>
                             <outlet property="delegate" destination="E4u-ic-gNd" id="xQq-uw-IQx"/>

@@ -97,6 +97,51 @@ class FilerCollectionViewController: UICollectionViewController {
         handleRoute(url, router: Routes.router)       
     }
     
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        var reusableview: UICollectionReusableView? = nil
+        
+        if kind == UICollectionElementKindSectionHeader {
+            reusableview = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "FilerCollectionReusableView", for: indexPath)
+        }
+        
+        return reusableview!
+    }
+    
+}
+
+extension FilerCollectionViewController {
+    @IBAction func sortby(_ sender: Any) {
+        let sheet = UIAlertController(title: "Sort by:", message: nil, preferredStyle: .actionSheet)
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let name = UIAlertAction(title: "Name", style: .default, handler: {(action: UIAlertAction!) in
+            //            if self.useCase.store(data: info) {
+            //                self.showAlert("successfully download")
+            //            } else {
+            //                self.showAlert("failed to download video")
+            //            }
+        })
+        let duration = UIAlertAction(title: "Duration", style: .default, handler: {(action: UIAlertAction!) in
+            //            if self.useCase.store(data: info) {
+            //                self.showAlert("successfully download")
+            //            } else {
+            //                self.showAlert("failed to download video")
+            //            }
+        })
+        let size = UIAlertAction(title: "Size", style: .default, handler: {(action: UIAlertAction!) in
+            //            if self.useCase.store(data: info) {
+            //                self.showAlert("successfully download")
+            //            } else {
+            //                self.showAlert("failed to download video")
+            //            }
+        })
+        
+        sheet.addAction(cancel)
+        sheet.addAction(name)
+        sheet.addAction(size)
+        sheet.addAction(duration)
+        
+        present(sheet, animated: true, completion: nil)
+    }
 }
 
 extension FilerCollectionViewController: UICollectionViewDelegateFlowLayout {

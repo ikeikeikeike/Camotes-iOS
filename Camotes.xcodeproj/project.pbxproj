@@ -15,6 +15,7 @@
 		884209CE20B5D68100EB9CB2 /* FilerRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884209CD20B5D68100EB9CB2 /* FilerRepo.swift */; };
 		884209D020B6FE2C00EB9CB2 /* FilerEntityTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884209CF20B6FE2C00EB9CB2 /* FilerEntityTranslator.swift */; };
 		884209D220B722A600EB9CB2 /* FilerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884209D120B722A600EB9CB2 /* FilerUseCase.swift */; };
+		885272FD20D1794D0008C104 /* FilerCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885272FC20D1794D0008C104 /* FilerCollectionReusableView.swift */; };
 		886E907B20BC483900946D0A /* Compass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 886E907A20BC483900946D0A /* Compass.framework */; };
 		886E907D20BC49E000946D0A /* FilerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886E907C20BC49E000946D0A /* FilerViewController.swift */; };
 		886E908120BD997400946D0A /* CachingPlayerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886E908020BD997400946D0A /* CachingPlayerItem.swift */; };
@@ -80,6 +81,7 @@
 		884209CD20B5D68100EB9CB2 /* FilerRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilerRepo.swift; sourceTree = "<group>"; };
 		884209CF20B6FE2C00EB9CB2 /* FilerEntityTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilerEntityTranslator.swift; sourceTree = "<group>"; };
 		884209D120B722A600EB9CB2 /* FilerUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilerUseCase.swift; sourceTree = "<group>"; };
+		885272FC20D1794D0008C104 /* FilerCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilerCollectionReusableView.swift; sourceTree = "<group>"; };
 		886E907A20BC483900946D0A /* Compass.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Compass.framework; path = Carthage/Build/iOS/Compass.framework; sourceTree = "<group>"; };
 		886E907C20BC49E000946D0A /* FilerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilerViewController.swift; sourceTree = "<group>"; };
 		886E907E20BD849B00946D0A /* Player.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Player.framework; path = Carthage/Build/iOS/Player.framework; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 				887C2C8F20B147A90026A1BC /* Filer.storyboard */,
 				887C2C9420B14E6B0026A1BC /* FilerCollectionViewCell.swift */,
 				887C2C9220B147E70026A1BC /* FilerCollectionViewController.swift */,
+				885272FC20D1794D0008C104 /* FilerCollectionReusableView.swift */,
 				886E907C20BC49E000946D0A /* FilerViewController.swift */,
 				886E908020BD997400946D0A /* CachingPlayerItem.swift */,
 			);
@@ -569,6 +572,7 @@
 				886E908320C18F3B00946D0A /* Extension+UIViewController.swift in Sources */,
 				887C2CA620B345E40026A1BC /* Translator.swift in Sources */,
 				887C2C9E20B344670026A1BC /* SwinjectStoryboard+Injector.swift in Sources */,
+				885272FD20D1794D0008C104 /* FilerCollectionReusableView.swift in Sources */,
 				886E908120BD997400946D0A /* CachingPlayerItem.swift in Sources */,
 				887C2CA020B344950026A1BC /* Swinject+Injector.swift in Sources */,
 				887C2C8720B019EB0026A1BC /* ScraperStore.swift in Sources */,
