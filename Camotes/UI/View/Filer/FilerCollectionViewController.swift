@@ -98,15 +98,55 @@ class FilerCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        var reusableview: UICollectionReusableView? = nil
-        
         if kind == UICollectionElementKindSectionHeader {
-            reusableview = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "FilerCollectionReusableView", for: indexPath)
+            let reusableview = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "FilerCollectionReusableView", for: indexPath) as! FilerCollectionReusableView
+            
+            return reusableview
         }
         
-        return reusableview!
+        return UICollectionReusableView()
     }
-    
+
+    @IBAction func sortby(_ sender: UIBarButtonItem) {
+        let handler = {(action: UIAlertAction!) in
+            let title = action.title!
+            sender.title = "Sorted by \(title) ▼"
+            
+            switch title {
+            case "Name":
+                self.files = self.files.sorted(byKeyPath: "name", ascending: false)
+            case "Duration":
+                self.files = self.files.sorted(byKeyPath: "duration", ascending: false)
+            case "Size":
+                print("not implimented")
+            case "Oldest":
+                self.files = self.files.sorted(byKeyPath: "date", ascending: true)
+            case "Latest":
+                self.files = self.files.sorted(byKeyPath: "date", ascending: false)
+            default:
+                self.files = self.files.sorted(byKeyPath: "date", ascending: false)
+            }
+            
+            self.collectionView?.reloadData()
+        }
+        
+        let alert = UIAlertController(title: "Sort by:", message: nil, preferredStyle: .actionSheet)
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let name = UIAlertAction(title: "Name", style: .default, handler: handler)
+        let duration = UIAlertAction(title: "Duration", style: .default, handler: handler)
+        let size = UIAlertAction(title: "Size", style: .default, handler: handler)
+        let asc = UIAlertAction(title: "Oldest", style: .default, handler: handler)
+        let date = UIAlertAction(title: "Latest", style: .default, handler: handler)
+        
+        alert.addAction(cancel)
+        alert.addAction(name)
+        alert.addAction(size)
+        alert.addAction(duration)
+        alert.addAction(asc)
+        alert.addAction(date)
+        
+        present(alert, animated: true)
+    }
 }
 
 extension FilerCollectionViewController: UICollectionViewDelegateFlowLayout {

@@ -75,7 +75,7 @@
                                         <barButtonItem systemItem="flexibleSpace" id="DSh-2a-x3J"/>
                                         <barButtonItem title="Sorted by Date ▼" id="zSd-1S-Yyn">
                                             <connections>
-                                                <action selector="sortby:" destination="g6A-8T-SLK" id="C3N-ET-qbN"/>
+                                                <action selector="sortby:" destination="E4u-ic-gNd" id="Ds9-tu-1EC"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem systemItem="flexibleSpace" id="WBY-hZ-PsI"/>
