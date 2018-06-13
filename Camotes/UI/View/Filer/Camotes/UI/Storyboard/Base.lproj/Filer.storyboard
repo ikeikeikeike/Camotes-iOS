@@ -75,7 +75,7 @@
                                         <barButtonItem systemItem="flexibleSpace" id="DSh-2a-x3J"/>
                                         <barButtonItem title="Sorted by Date ▼" id="zSd-1S-Yyn">
                                             <connections>
-                                                <action selector="sortby:" destination="E4u-ic-gNd" id="aEq-Zi-hTa"/>
+                                                <action selector="sortby:" destination="g6A-8T-SLK" id="C3N-ET-qbN"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem systemItem="flexibleSpace" id="WBY-hZ-PsI"/>
@@ -90,7 +90,7 @@
                                 <constraint firstItem="lBD-e4-BZM" firstAttribute="top" secondItem="g6A-8T-SLK" secondAttribute="top" id="yXB-Fp-ScE"/>
                             </constraints>
                             <connections>
-                                <outlet property="sortby" destination="zSd-1S-Yyn" id="m4o-9O-jqE"/>
+                                <outlet property="sortbyItem" destination="zSd-1S-Yyn" id="P0Y-RT-zm2"/>
                                 <outlet property="toolbar" destination="lBD-e4-BZM" id="Uq1-ee-d0R"/>
                             </connections>
                         </collectionReusableView>

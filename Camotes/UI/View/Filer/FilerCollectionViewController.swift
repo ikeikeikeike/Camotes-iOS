@@ -109,41 +109,6 @@ class FilerCollectionViewController: UICollectionViewController {
     
 }
 
-extension FilerCollectionViewController {
-    @IBAction func sortby(_ sender: Any) {
-        let sheet = UIAlertController(title: "Sort by:", message: nil, preferredStyle: .actionSheet)
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        let name = UIAlertAction(title: "Name", style: .default, handler: {(action: UIAlertAction!) in
-            //            if self.useCase.store(data: info) {
-            //                self.showAlert("successfully download")
-            //            } else {
-            //                self.showAlert("failed to download video")
-            //            }
-        })
-        let duration = UIAlertAction(title: "Duration", style: .default, handler: {(action: UIAlertAction!) in
-            //            if self.useCase.store(data: info) {
-            //                self.showAlert("successfully download")
-            //            } else {
-            //                self.showAlert("failed to download video")
-            //            }
-        })
-        let size = UIAlertAction(title: "Size", style: .default, handler: {(action: UIAlertAction!) in
-            //            if self.useCase.store(data: info) {
-            //                self.showAlert("successfully download")
-            //            } else {
-            //                self.showAlert("failed to download video")
-            //            }
-        })
-        
-        sheet.addAction(cancel)
-        sheet.addAction(name)
-        sheet.addAction(size)
-        sheet.addAction(duration)
-        
-        present(sheet, animated: true, completion: nil)
-    }
-}
-
 extension FilerCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let size: CGFloat = (UIScreen.main.bounds.width / 2) - 5.0
