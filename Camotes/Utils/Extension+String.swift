@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 extension String {
     func quote() -> String {
         return addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!

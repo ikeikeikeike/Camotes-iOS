@@ -7,10 +7,10 @@ protocol ScraperStore {
 }
 
 struct ScraperStoreImpl: ScraperStore {
-    
+
     let provider: MoyaProvider<ScraperAPI> = {
         let logger = NetworkLoggerPlugin(cURL: true)
-        
+
         let stub = { (target: ScraperAPI) -> StubBehavior in .never }
         return MoyaProvider<ScraperAPI>(stubClosure: stub, plugins: [logger])
     }()
@@ -21,5 +21,5 @@ struct ScraperStoreImpl: ScraperStore {
             .map(InfoEntity.self, atKeyPath: "root")
             .subscribe(handler)
     }
-    
+
 }

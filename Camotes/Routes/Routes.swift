@@ -9,24 +9,24 @@ import Compass
 
 class Routes {
     static var router = Router()
-    
+
     class func initialize() {
         setupRouter()
     }
-    
-    private class func setupRouter(){
+
+    private class func setupRouter() {
         Navigator.scheme = "compass"
         Navigator.routes = [
             "filer:{id}",
-            "filer-collection:{title}",
+            "filer-collection:{title}"
 //            "ab:{title}",
 //            "dupdater:{section}:{title}",
 //            "dpicker:{section}:{title}",
         ]
-        
+
         router.routes = [
             "filer:{id}": FilerRoute(),
-            "filer-collection:{title}": FilerCollectionRoute(),
+            "filer-collection:{title}": FilerCollectionRoute()
 //            "ab:{title}": ABRoute(),
 //            "dupdater:{section}:{title}": DUpdaterRoute(),
 //            "dpicker:{section}:{title}": DPickerRoute(),
@@ -52,18 +52,17 @@ struct FilerRoute: Routable {
 struct FilerCollectionRoute: Routable {
     let vc = UIStoryboard(name: "Filer", bundle: nil)
         .instantiateViewController(withIdentifier: "FilerCollectionViewController")
-    
+
     func navigate(to location: Location, from currentController: CurrentController) throws {
         guard let title = location.arguments["title"] else {
             return
         }
-        
+
         vc.title = title
-        
+
         currentController.navigationController?.pushViewController(vc, animated: true)
     }
 }
-
 
 //struct ABRoute: Routable {
 //    let vc = UIStoryboard(name: "AB", bundle: nil)

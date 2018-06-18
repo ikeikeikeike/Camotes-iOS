@@ -17,19 +17,19 @@ public protocol FilerRepo {
 
 public struct FilerRepoImpl: FilerRepo {
     fileprivate let store: FilerStore! = Injector.ct.resolve(FilerStore.self)
-    
+
     public func find(id: String) -> FilerObject? {
         return store.find(id: id)
     }
-    
+
     public func all() -> Results<FilerObject> {
         return store.all()
     }
-    
+
     public func save(data: FilerObject) -> Bool {
         return store.save(data: data)
     }
-    
+
     public func delete(data: FilerObject) -> Bool {
         return store.delete(data: data)
     }

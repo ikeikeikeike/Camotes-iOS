@@ -9,10 +9,9 @@
 import Foundation
 import RealmSwift
 
-
 internal struct FilerObjectTranslator: Translator {
     internal func translate(_ model: InfoModel) -> FilerObject {
-        
+
         let duration: Int? = Int(model.duration ?? 0)
         let thumb = try! Data(contentsOf: URL(string: model.thumbnail!)!) // TODO:
 
@@ -25,7 +24,7 @@ internal struct FilerObjectTranslator: Translator {
         data.thumb = thumb
         return data
     }
-    
+
     internal func translate(_ entities: [InfoModel]) -> [FilerObject] {
         return entities.map(translate)
     }

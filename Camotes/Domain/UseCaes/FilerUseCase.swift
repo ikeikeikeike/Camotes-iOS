@@ -14,9 +14,9 @@ public protocol FilerUseCase {
 }
 
 public struct FilerUseCaseImpl: FilerUseCase {
-    
+
     fileprivate let filerRepo: FilerRepo! = Injector.ct.resolve(FilerRepo.self)
-    
+
     public func find(id: String) -> FilerObject? {
         return filerRepo.find(id: id)
     }

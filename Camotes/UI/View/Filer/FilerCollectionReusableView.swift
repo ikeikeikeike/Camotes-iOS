@@ -9,8 +9,8 @@
 import UIKit
 
 class FilerCollectionReusableView: UICollectionReusableView {
-    
+
     @IBOutlet weak var toolbar: UIToolbar!
     @IBOutlet weak var sortbyItem: UIBarButtonItem!
-    
+
 }

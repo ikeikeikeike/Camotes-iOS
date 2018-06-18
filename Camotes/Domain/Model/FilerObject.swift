@@ -20,7 +20,7 @@ public class FilerObject: DBObject {
 
 //    let likes                      = RealmOptional<Int>()
 //    let views                      = RealmOptional<Int>()
-    
+
     override public static func indexedProperties() -> [String] {
         return ["title", "site", "date", "duration"]
     }

@@ -16,13 +16,13 @@ public protocol BrowserUseCase {
 }
 
 public struct BrowserUseCaseImpl: BrowserUseCase {
-    
+
     fileprivate let scraperRepo: ScraperRepo! = Injector.ct.resolve(ScraperRepo.self)
     fileprivate let filerRepo: FilerRepo! = Injector.ct.resolve(FilerRepo.self)
-    
+
     private let filerObjectTrans = FilerObjectTranslator()
     private let infoModelTrans = InfoModelTranslator()
-    
+
     public func info(url: String, handler: @escaping (SingleEvent<InfoModel>) -> Void) {
         scraperRepo.info(url: url) { event in
             switch event {
@@ -34,7 +34,7 @@ public struct BrowserUseCaseImpl: BrowserUseCase {
             }
         }
     }
-    
+
     public func store(data: InfoModel) -> Bool {
         return filerRepo.save(data: filerObjectTrans.translate(data))
     }

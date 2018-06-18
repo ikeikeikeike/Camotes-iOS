@@ -8,9 +8,9 @@ extension SwinjectStoryboard {
     @objc class func setup() {
         Injector.initialize()
         Routes.initialize()
-        
+
 //        let ct = SwinjectStoryboard.defaultContainer
-        
+
 //        ct.storyboardInitCompleted(BrowserViewController.self) { r, vc in
 //            vc.useCase = r.resolve(BrowserUseCase.self)
 //        }
@@ -25,5 +25,5 @@ extension SwinjectStoryboard {
 //            vc.presenter = r.resolve(LoginPresenter.self)
 //        }
     }
-    
+
 }

@@ -15,11 +15,11 @@ enum ScraperAPI {
 
 // MARK: - TargetType Protocol Implementation
 extension ScraperAPI: TargetType, AccessTokenAuthorizable {
-    
+
     var baseURL: URL {
         return URL(string: "http://127.0.0.1:8000")!
     }
-    
+
     var path: String {
         switch self {
         case .info(let url):
@@ -28,34 +28,34 @@ extension ScraperAPI: TargetType, AccessTokenAuthorizable {
             return "/api/stream/\(url.data(using: .utf8)?.base64EncodedString() ?? "")"
         }
     }
-    
+
     var method: Moya.Method {
         switch self {
         default:
             return .get
         }
     }
-    
+
     var authorizationType: AuthorizationType {
         switch self {
         default:
             return .none
         }
     }
-    
+
     var task: Task {
         let params = [String: Any]()
         return .requestParameters(parameters: params, encoding: JSONEncoding.default)
     }
-    
-    var headers: [String : String]? {
+
+    var headers: [String: String]? {
         return nil
     }
-    
+
     var sampleData: Data {
         let resource: String? = String(describing: self)
         let path = Bundle.main.path(forResource: resource, ofType: "json")!
         return FileHandle(forReadingAtPath: path)!.readDataToEndOfFile()
     }
-    
+
 }

@@ -10,7 +10,7 @@ import RealmSwift
 
 public class DBObject: Object {
     @objc dynamic var id = NSUUID().uuidString
-    
+
     override public static func primaryKey() -> String? {
         return "id"
     }
@@ -21,11 +21,11 @@ public class DBObject: Object {
 
 class DBBase<DBType: DBObject> {
     let realm = try! Realm()
-    
+
     public func find(id: String) -> DBType? {
         return realm.objects(DBType.self).filter("id == '\(id)'").first
     }
-    
+
     public func all() -> Results<DBType> {
         return realm.objects(DBType.self)
     }
@@ -33,15 +33,15 @@ class DBBase<DBType: DBObject> {
     public func save(data: DBType) -> Bool {
         return find(id: data.id) == nil ? create(data: data) : update(data: data)
     }
-    
+
     public func create(data: DBType) -> Bool {
         return (try? realm.write { realm.add(data) }) != nil
     }
-    
+
     public func update(data: DBType) -> Bool {
         return (try? realm.write { realm.add(data, update: true) }) != nil
     }
-    
+
     public func delete(data: DBType) -> Bool {
         return (try? realm.write { realm.delete(data) }) != nil
     }

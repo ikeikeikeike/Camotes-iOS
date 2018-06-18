@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2003DC1037EC70DF67A90AE4 /* Pods_CamotesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87AAA6FAE7DAA4C2ADE2A7F5 /* Pods_CamotesUITests.framework */; };
+		3CE3E9BB235F68A1EC028979 /* Pods_Camotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359EC836D791E0854CED25AE /* Pods_Camotes.framework */; };
+		4DF3B22C45BB5FA8C79A8C23 /* Pods_CamotesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF0E3A71E398F6E16A2FE1B6 /* Pods_CamotesTests.framework */; };
 		884209C320B5BAF300EB9CB2 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 884209C220B5BAF300EB9CB2 /* Realm.framework */; };
 		884209C520B5BAFF00EB9CB2 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 884209C420B5BAFF00EB9CB2 /* RealmSwift.framework */; };
 		884209C820B5BBE600EB9CB2 /* FilerStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884209C720B5BBE600EB9CB2 /* FilerStore.swift */; };
@@ -73,6 +76,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A509B4C9C21533B80227C20 /* Pods-CamotesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CamotesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CamotesTests/Pods-CamotesTests.release.xcconfig"; sourceTree = "<group>"; };
+		359EC836D791E0854CED25AE /* Pods_Camotes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Camotes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		87AAA6FAE7DAA4C2ADE2A7F5 /* Pods_CamotesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CamotesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		884209C220B5BAF300EB9CB2 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		884209C420B5BAFF00EB9CB2 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		884209C720B5BBE600EB9CB2 /* FilerStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilerStore.swift; sourceTree = "<group>"; };
@@ -126,6 +132,12 @@
 		88BEC0FD2084F92200F84D89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Camotes/Base.lproj/Browser.storyboard; sourceTree = "<group>"; };
 		88BEC1002084FCC300F84D89 /* BrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserViewController.swift; sourceTree = "<group>"; };
 		88BEC10320850C2900F84D89 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		ABFB90232F6678F8CAC95F2D /* Pods-CamotesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CamotesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CamotesTests/Pods-CamotesTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AF0E3A71E398F6E16A2FE1B6 /* Pods_CamotesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CamotesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B06E25037340AA928C0D0B21 /* Pods-Camotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Camotes.release.xcconfig"; path = "Pods/Target Support Files/Pods-Camotes/Pods-Camotes.release.xcconfig"; sourceTree = "<group>"; };
+		D22E8D2681A842537F37C798 /* Pods-CamotesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CamotesUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CamotesUITests/Pods-CamotesUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D25D5B2B40520D2C730C2230 /* Pods-Camotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Camotes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Camotes/Pods-Camotes.debug.xcconfig"; sourceTree = "<group>"; };
+		F807C32E90E94DFB2DB6CA16 /* Pods-CamotesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CamotesUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CamotesUITests/Pods-CamotesUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +156,7 @@
 				88AB3A0120B00B670061DCF0 /* Result.framework in Frameworks */,
 				88AB39FF20B00B540061DCF0 /* Alamofire.framework in Frameworks */,
 				88BEC10420850C2900F84D89 /* WebKit.framework in Frameworks */,
+				3CE3E9BB235F68A1EC028979 /* Pods_Camotes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +164,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DF3B22C45BB5FA8C79A8C23 /* Pods_CamotesTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,12 +172,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2003DC1037EC70DF67A90AE4 /* Pods_CamotesUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		19A3BDAD920B28BD02D67C75 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D25D5B2B40520D2C730C2230 /* Pods-Camotes.debug.xcconfig */,
+				B06E25037340AA928C0D0B21 /* Pods-Camotes.release.xcconfig */,
+				ABFB90232F6678F8CAC95F2D /* Pods-CamotesTests.debug.xcconfig */,
+				1A509B4C9C21533B80227C20 /* Pods-CamotesTests.release.xcconfig */,
+				D22E8D2681A842537F37C798 /* Pods-CamotesUITests.debug.xcconfig */,
+				F807C32E90E94DFB2DB6CA16 /* Pods-CamotesUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		884209C620B5BB9C00EB9CB2 /* DB */ = {
 			isa = PBXGroup;
 			children = (
@@ -220,6 +248,7 @@
 				88BEC0DF20839CF500F84D89 /* CamotesUITests */,
 				88BEC0BE20839CF300F84D89 /* Products */,
 				88BEC10220850C2800F84D89 /* Frameworks */,
+				19A3BDAD920B28BD02D67C75 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -395,6 +424,9 @@
 				88AB3A0020B00B670061DCF0 /* Result.framework */,
 				88AB39FE20B00B540061DCF0 /* Alamofire.framework */,
 				88BEC10320850C2900F84D89 /* WebKit.framework */,
+				359EC836D791E0854CED25AE /* Pods_Camotes.framework */,
+				AF0E3A71E398F6E16A2FE1B6 /* Pods_CamotesTests.framework */,
+				87AAA6FAE7DAA4C2ADE2A7F5 /* Pods_CamotesUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -406,10 +438,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 88BEC0E520839CF500F84D89 /* Build configuration list for PBXNativeTarget "Camotes" */;
 			buildPhases = (
+				DF31EF1E5F28A92095F8E10E /* [CP] Check Pods Manifest.lock */,
 				88BEC0B920839CF300F84D89 /* Sources */,
 				88BEC0BA20839CF300F84D89 /* Frameworks */,
 				88BEC0BB20839CF300F84D89 /* Resources */,
 				88AB3A0420B00BEA0061DCF0 /* Run Script */,
+				B8C5D1F96100BD967BB46084 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -424,6 +458,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 88BEC0E820839CF500F84D89 /* Build configuration list for PBXNativeTarget "CamotesTests" */;
 			buildPhases = (
+				B7F989C326174F6427C8F646 /* [CP] Check Pods Manifest.lock */,
 				88BEC0CD20839CF500F84D89 /* Sources */,
 				88BEC0CE20839CF500F84D89 /* Frameworks */,
 				88BEC0CF20839CF500F84D89 /* Resources */,
@@ -442,6 +477,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 88BEC0EB20839CF500F84D89 /* Build configuration list for PBXNativeTarget "CamotesUITests" */;
 			buildPhases = (
+				8DC7940017367135FF69F722 /* [CP] Check Pods Manifest.lock */,
 				88BEC0D820839CF500F84D89 /* Sources */,
 				88BEC0D920839CF500F84D89 /* Frameworks */,
 				88BEC0DA20839CF500F84D89 /* Resources */,
@@ -551,7 +587,79 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n\nif which \"${PODS_ROOT}/SwiftLint/swiftlint\" >/dev/null; then\n\"${PODS_ROOT}/SwiftLint/swiftlint\" autocorrect\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		8DC7940017367135FF69F722 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CamotesUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B7F989C326174F6427C8F646 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CamotesTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8C5D1F96100BD967BB46084 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Camotes/Pods-Camotes-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/MZDownloadManager/MZDownloadManager.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MZDownloadManager.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Camotes/Pods-Camotes-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DF31EF1E5F28A92095F8E10E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Camotes-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -774,6 +882,7 @@
 		};
 		88BEC0E620839CF500F84D89 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D25D5B2B40520D2C730C2230 /* Pods-Camotes.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -796,6 +905,7 @@
 		};
 		88BEC0E720839CF500F84D89 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B06E25037340AA928C0D0B21 /* Pods-Camotes.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -818,6 +928,7 @@
 		};
 		88BEC0E920839CF500F84D89 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ABFB90232F6678F8CAC95F2D /* Pods-CamotesTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -839,6 +950,7 @@
 		};
 		88BEC0EA20839CF500F84D89 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A509B4C9C21533B80227C20 /* Pods-CamotesTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -860,6 +972,7 @@
 		};
 		88BEC0EC20839CF500F84D89 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D22E8D2681A842537F37C798 /* Pods-CamotesUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -880,6 +993,7 @@
 		};
 		88BEC0ED20839CF500F84D89 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F807C32E90E94DFB2DB6CA16 /* Pods-CamotesUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
