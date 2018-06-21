@@ -8,12 +8,14 @@
 
 import UIKit
 import RealmSwift
+import MZDownloadManager
 
 private let reuseID = "FilerCollectionViewCell"
 
 class FilerCollectionViewController: UICollectionViewController {
 
     let useCase: FilerUseCase! = Injector.ct.resolve(FilerUseCase.self)
+    var downloadManager: MZDownloadManager!
 
     var files: Results<FilerObject>!
     var notifyToken: NotificationToken?
@@ -186,6 +188,71 @@ extension FilerCollectionViewController: UISearchControllerDelegate {
 
     func didDismissSearchController(_ searchController: UISearchController) {
         //debugPrint("UISearchControllerDelegate invoked method: \(__FUNCTION__).")
+    }
+}
+
+extension FilerCollectionViewController: MZDownloadManagerDelegate {
+
+    func downloadRequestStarted(_ downloadModel: MZDownloadModel, index: Int) {
+//        let indexPath = IndexPath.init(row: index, section: 0)
+//        tableView.insertRows(at: [indexPath], with: UITableViewRowAnimation.fade)
+    }
+
+    func downloadRequestDidPopulatedInterruptedTasks(_ downloadModels: [MZDownloadModel]) {
+//        tableView.reloadData()
+    }
+
+    func downloadRequestDidUpdateProgress(_ downloadModel: MZDownloadModel, index: Int) {
+//        self.refreshCellForIndex(downloadModel, index: index)
+    }
+
+    func downloadRequestDidPaused(_ downloadModel: MZDownloadModel, index: Int) {
+//        self.refreshCellForIndex(downloadModel, index: index)
+    }
+
+    func downloadRequestDidResumed(_ downloadModel: MZDownloadModel, index: Int) {
+//        self.refreshCellForIndex(downloadModel, index: index)
+    }
+
+    func downloadRequestCanceled(_ downloadModel: MZDownloadModel, index: Int) {
+
+//        self.safelyDismissAlertController()
+
+//        let indexPath = IndexPath.init(row: index, section: 0)
+//        tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.left)
+    }
+
+    func downloadRequestFinished(_ downloadModel: MZDownloadModel, index: Int) {
+
+//        self.safelyDismissAlertController()
+
+//        downloadManager.presentNotificationForDownload("Ok", notifBody: "Download did completed")
+
+//        let indexPath = IndexPath.init(row: index, section: 0)
+//        tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.left)
+//
+//        let docDirectoryPath : NSString = (MZUtility.baseFilePath as NSString).appendingPathComponent(downloadModel.fileName) as NSString
+//        NotificationCenter.default.post(name: NSNotification.Name(rawValue: MZUtility.DownloadCompletedNotif as String), object: docDirectoryPath)
+    }
+
+    func downloadRequestDidFailedWithError(_ error: NSError, downloadModel: MZDownloadModel, index: Int) {
+//        self.safelyDismissAlertController()
+//        self.refreshCellForIndex(downloadModel, index: index)
+//
+//        debugPrint("Error while downloading file: \(downloadModel.fileName)  Error: \(error)")
+    }
+
+    //Oppotunity to handle destination does not exists error
+    //This delegate will be called on the session queue so handle it appropriately
+    func downloadRequestDestinationDoestNotExists(_ downloadModel: MZDownloadModel, index: Int, location: URL) {
+//        let myDownloadPath = MZUtility.baseFilePath + "/Default folder"
+//        if !FileManager.default.fileExists(atPath: myDownloadPath) {
+//            try! FileManager.default.createDirectory(atPath: myDownloadPath, withIntermediateDirectories: true, attributes: nil)
+//        }
+//        let fileName = MZUtility.getUniqueFileNameWithPath((myDownloadPath as NSString).appendingPathComponent(downloadModel.fileName as String) as NSString)
+//        let path =  myDownloadPath + "/" + (fileName as String)
+//        try! FileManager.default.moveItem(at: location, to: URL(fileURLWithPath: path))
+//        debugPrint("Default folder path: \(myDownloadPath)")
     }
 }
 

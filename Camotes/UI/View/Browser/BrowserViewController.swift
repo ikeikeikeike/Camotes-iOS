@@ -8,10 +8,14 @@
 
 import UIKit
 import WebKit
+import MZDownloadManager
 
 class BrowserViewController: UIViewController {
 
     let useCase: BrowserUseCase! = Injector.ct.resolve(BrowserUseCase.self)
+
+    var downloadManager: MZDownloadManager!
+    let downloadPath = MZUtility.baseFilePath + "/My Downloads"
 
     let defaultURL = "https://google.com"
 
@@ -133,16 +137,17 @@ extension BrowserViewController {
         useCase.info(url: urlString) { result in
             switch result {
             case .success(let info):
-                let message = "\(info.webpageBasename).\(info.ext)"
+                let filename = "\(info.webpageBasename).\(info.ext)"
 
-                let sheet = UIAlertController(title: "Download Video", message: message, preferredStyle: .alert)
+                let sheet = UIAlertController(title: "Download Video", message: filename, preferredStyle: .alert)
                 let cancel = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
-                let action = UIAlertAction(title: "Download", style: .default, handler: {(action: UIAlertAction!) in
-                    if self.useCase.store(data: info) {
-                        self.showAlert("successfully download")
-                    } else {
-                        self.showAlert("failed to download video")
+                let action = UIAlertAction(title: "Download", style: .default, handler: {(_: UIAlertAction!) in
+                    if !self.useCase.store(data: info) {
+                        return self.showAlert("failed to download video")
                     }
+
+//                    self.downloadManager.addDownloadTask(filename, fileURL: info.thumbnail!, destinationPath: self.downloadPath)
+                    self.showAlert("successfully download")
                 })
 
                 sheet.addAction(cancel)
@@ -163,7 +168,7 @@ extension BrowserViewController: WKNavigationDelegate {
     }
 
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
-        if (error as! URLError).code == URLError.cancelled {
+        if (error as? URLError)?.code == URLError.cancelled {
             return
         }
 
@@ -219,7 +224,7 @@ extension BrowserViewController: UIScrollViewDelegate {
 
         UIView.animate(withDuration: duration, animations: {
             tabBar.frame = frame.offsetBy(dx: 0, dy: offset)
-        }, completion: { (true) in
+        }, completion: { _ in
             tabBar.isHidden = hidden
             toolBar.isHidden = !hidden
         })
