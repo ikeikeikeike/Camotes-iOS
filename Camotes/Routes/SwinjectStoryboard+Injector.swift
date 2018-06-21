@@ -14,22 +14,17 @@ extension SwinjectStoryboard {
         let ct = SwinjectStoryboard.defaultContainer
 
         ct.storyboardInitCompleted(FilerCollectionViewController.self) { _, vc in
-            let session: String = "it.ikeikeikeike.Camotes.Filer.BackgroundSession"
+            let session = "it.ikeikeikeike.Camotes.Filer.BackgroundSession"
             var completion = (UIApplication.shared.delegate as! AppDelegate).backgroundSessionCompletionHandler
             vc.downloadManager = MZDownloadManager(session: session, delegate: vc, completion: completion)
-
-            ct.storyboardInitCompleted(BrowserViewController.self) { _, bvc in bvc.downloadManager = vc.downloadManager }
         }
 
-//        ct.storyboardInitCompleted(FilerCollectionViewController.self) { r, vc in
-//            vc.useCase = r.resolve(FilerUseCase.self)
-//        }
+        ct.storyboardInitCompleted(BrowserViewController.self) { _, vc in
+            let sb = SwinjectStoryboard.create(name: "Filer", bundle: nil, container: ct)
+            let fvc = sb.instantiateViewController(withIdentifier: "FilerCollectionViewController") as! FilerCollectionViewController
+            vc.downloadManager = fvc.downloadManager
+        }
 
-//        ct.register(LoginPresenter.self) { _ in LoginPresenterImpl() }
-//        ct.storyboardInitCompleted(LoginViewController.self) { r, vc in
-//            //            vc.tokenKey = r.resolve(TokenKey.self)
-//            vc.presenter = r.resolve(LoginPresenter.self)
-//        }
     }
 
 }

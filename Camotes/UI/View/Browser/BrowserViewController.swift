@@ -146,7 +146,7 @@ extension BrowserViewController {
                         return self.showAlert("failed to download video")
                     }
 
-//                    self.downloadManager.addDownloadTask(filename, fileURL: info.thumbnail!, destinationPath: self.downloadPath)
+                    self.downloadManager.addDownloadTask(filename, fileURL: info.thumbnail!, destinationPath: self.downloadPath)
                     self.showAlert("successfully download")
                 })
 
