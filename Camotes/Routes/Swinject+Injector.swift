@@ -3,9 +3,10 @@
 //  Copyright © 2018 Tatsuo Ikeda. All rights reserved.
 //
 import Swinject
+import SwinjectStoryboard
 
 final class Injector {
-    static let ct = Container()
+    static let ct = SwinjectStoryboard.defaultContainer
 
     class func initialize() {
         prepared()

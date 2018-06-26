@@ -13,9 +13,8 @@ import MZDownloadManager
 private let reuseID = "FilerCollectionViewCell"
 
 class FilerCollectionViewController: UICollectionViewController {
-
     let useCase: FilerUseCase! = Injector.ct.resolve(FilerUseCase.self)
-    var downloadManager: MZDownloadManager!
+    static var downloadManager: MZDownloadManager!
 
     var files: Results<FilerObject>!
     var notifyToken: NotificationToken?
@@ -28,6 +27,10 @@ class FilerCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let session = "it.ikeikeikeike.Camotes.Filer.BackgroundSession"
+        let completion = (UIApplication.shared.delegate as! AppDelegate).backgroundSessionCompletionHandler
+        FilerCollectionViewController.downloadManager = MZDownloadManager(session: session, delegate: self, completion: completion)
 
         // Objects
         files = useCase.files()
@@ -194,27 +197,33 @@ extension FilerCollectionViewController: UISearchControllerDelegate {
 extension FilerCollectionViewController: MZDownloadManagerDelegate {
 
     func downloadRequestStarted(_ downloadModel: MZDownloadModel, index: Int) {
+        print("func downloadRequestStarted(_ downloadModel: MZDownloadModel, index: Int)")
 //        let indexPath = IndexPath.init(row: index, section: 0)
 //        tableView.insertRows(at: [indexPath], with: UITableViewRowAnimation.fade)
     }
 
     func downloadRequestDidPopulatedInterruptedTasks(_ downloadModels: [MZDownloadModel]) {
+        print("func downloadRequestDidPopulatedInterruptedTasks(_ downloadModels: [MZDownloadModel]) {")
 //        tableView.reloadData()
     }
 
     func downloadRequestDidUpdateProgress(_ downloadModel: MZDownloadModel, index: Int) {
+        print("func downloadRequestDidUpdateProgress(_ downloadModel: MZDownloadModel, index: Int) {")
 //        self.refreshCellForIndex(downloadModel, index: index)
     }
 
     func downloadRequestDidPaused(_ downloadModel: MZDownloadModel, index: Int) {
+        print("func downloadRequestDidPaused(_ downloadModel: MZDownloadModel, index: Int) {")
 //        self.refreshCellForIndex(downloadModel, index: index)
     }
 
     func downloadRequestDidResumed(_ downloadModel: MZDownloadModel, index: Int) {
+        print("func downloadRequestDidResumed(_ downloadModel: MZDownloadModel, index: Int) {")
 //        self.refreshCellForIndex(downloadModel, index: index)
     }
 
     func downloadRequestCanceled(_ downloadModel: MZDownloadModel, index: Int) {
+        print("func downloadRequestCanceled(_ downloadModel: MZDownloadModel, index: Int) {")
 
 //        self.safelyDismissAlertController()
 
@@ -223,6 +232,7 @@ extension FilerCollectionViewController: MZDownloadManagerDelegate {
     }
 
     func downloadRequestFinished(_ downloadModel: MZDownloadModel, index: Int) {
+        print("func downloadRequestFinished(_ downloadModel: MZDownloadModel, index: Int) {")
 
 //        self.safelyDismissAlertController()
 
@@ -236,6 +246,7 @@ extension FilerCollectionViewController: MZDownloadManagerDelegate {
     }
 
     func downloadRequestDidFailedWithError(_ error: NSError, downloadModel: MZDownloadModel, index: Int) {
+        print("func downloadRequestDidFailedWithError(_ error: NSError, downloadModel: MZDownloadModel, index: Int) {")
 //        self.safelyDismissAlertController()
 //        self.refreshCellForIndex(downloadModel, index: index)
 //
@@ -245,6 +256,7 @@ extension FilerCollectionViewController: MZDownloadManagerDelegate {
     //Oppotunity to handle destination does not exists error
     //This delegate will be called on the session queue so handle it appropriately
     func downloadRequestDestinationDoestNotExists(_ downloadModel: MZDownloadModel, index: Int, location: URL) {
+        print("func downloadRequestDestinationDoestNotExists(_ downloadModel: MZDownloadModel, index: Int, location: URL) {")
 //        let myDownloadPath = MZUtility.baseFilePath + "/Default folder"
 //        if !FileManager.default.fileExists(atPath: myDownloadPath) {
 //            try! FileManager.default.createDirectory(atPath: myDownloadPath, withIntermediateDirectories: true, attributes: nil)

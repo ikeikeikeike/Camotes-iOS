@@ -14,7 +14,6 @@ class BrowserViewController: UIViewController {
 
     let useCase: BrowserUseCase! = Injector.ct.resolve(BrowserUseCase.self)
 
-    var downloadManager: MZDownloadManager!
     let downloadPath = MZUtility.baseFilePath + "/My Downloads"
 
     let defaultURL = "https://google.com"
@@ -146,7 +145,9 @@ extension BrowserViewController {
                         return self.showAlert("failed to download video")
                     }
 
-                    self.downloadManager.addDownloadTask(filename, fileURL: info.thumbnail!, destinationPath: self.downloadPath)
+                    let fileURL = "http://localhost:8000/api/stream/aHR0cHM6Ly93d3cueHZpZGVvcy5jb20vdmlkZW8yODgzMjA3MS9zaGFwZWx5X2xhdGluYV9pbl90YW5fY29sb3JlZF9zdXBlcl9zaG9ydF9kcmVzcw==?format=mp4-low"
+                    FilerCollectionViewController.downloadManager.addDownloadTask(filename, fileURL: fileURL, destinationPath: self.downloadPath)
+
                     self.showAlert("successfully download")
                 })
 
